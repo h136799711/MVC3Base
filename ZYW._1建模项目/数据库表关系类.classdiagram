@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="072428a9-7d22-40ba-8329-3094c98b9360" name="数据库表关系类" linkedPackageId="58da9d6c-a897-4c11-ae1d-a6228392e336" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="ec2b09c4-46a9-4eb2-811b-a8323c80db69">
+      <elementDefinition Id="d38145c2-d632-4c5b-96e8-9094f15550ad" />
+      <body>说明：书的目录
+注意：XCode以Cat前缀</body>
+    </comment>
+    <comment Id="c4fc8466-111d-49f5-af2c-aae56d8cf696">
+      <elementDefinition Id="935e9a59-8817-49ad-a38a-0a9fe2b21655" />
+      <body>说明：系统编码，比如各种类型
+注意：XPrefix指定此XCode必须包含的前缀三位字符
+，XCode在表中必须唯一
+</body>
+    </comment>
+    <comment Id="3a9acb2f-1fb5-4d62-964f-623a6c612649">
+      <elementDefinition Id="abd09dac-7799-49fe-8856-7b34a209ba1c" />
+      <body>说明：书内容的类型例如武侠，玄幻，惊悚等等
+注意：XCode以Bkt为前缀</body>
+    </comment>
+    <comment Id="9eeb4b54-f717-4a73-84d5-acb90cde9658">
+      <elementDefinition Id="0460de0e-1450-49fb-8db8-148c4206e7d7" />
+      <body>说明：书</body>
+    </comment>
+    <comment Id="0fe5a52e-77d0-4860-8296-bb966b713363">
+      <elementDefinition Id="64603859-bf22-4e64-b7ec-0818cea5cb79" />
+      <body>说明：资源
+类型
+注意：XCode以Res为前缀</body>
+    </comment>
+    <comment Id="57ab7ee7-8a74-480c-b734-3cb4e82f79c6">
+      <elementDefinition Id="9a85869c-ba0d-4338-9a59-a04ce0063754" />
+      <body>说明:书的页
+bpIndex书的页数</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f889e3ff-ef20-401d-a4ec-74c4255fd11a" name="SysXCode" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6504fc53-d928-4999-9118-715b986899ee" />
+        <ownedAttributesInternal>
+          <property Id="12b3a2dc-7652-4d55-88ed-9bf7527555cb" name="XCode" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="26a2a565-9d5c-4d85-aca6-a8de5f3b3735" />
+          </property>
+          <property Id="bf944315-2736-4e57-9996-58b26ee79205" name="XID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="42ad79fe-0b8a-4244-875f-7dcdaf4870a3" />
+          </property>
+          <property Id="3439b50e-3761-4855-9fe6-694d81ebad7d" name="XFlag" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9ac9d993-0380-4ed8-b9a2-c71bfed0c308" />
+          </property>
+          <property Id="ab96ba62-c938-45d6-be12-fe7dc2d40f4d" name="XDepth" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1fc08c25-c762-402d-9ce6-2b36a54d1261" />
+          </property>
+          <property Id="2a0e8c2c-a7df-4f68-8c4e-5779104b1a4d" name="XName" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9652293b-f7c8-492b-b0c6-a7701a82786b" />
+          </property>
+          <property Id="ac277dd4-0935-472b-a792-ea8397e81c3b" name="XOrderNumber" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3d684c1b-91f9-4b32-b918-54efd5da08f2" />
+          </property>
+          <property Id="9c4c80d8-afa0-4288-8eac-7affd15401a3" name="XParentID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8ae929da-c44b-4060-a560-a01282b9ac3f" />
+          </property>
+          <property Id="19a16eda-05ec-46bb-885b-88db73f25433" name="XRemark" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="71179f6f-7569-4995-8a68-aaa039db7b73" />
+          </property>
+          <property Id="a8d5afe1-90fc-453a-a2a0-0b5b8f7ef1df" name="XPrefix" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d6486a64-ca04-44c9-a3a0-0de09ce44904" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="53ef36a1-9cb4-4e4a-b012-c2debf4966de" name="Book" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e3a913f1-d1e1-408b-8234-23bb8b043d57" />
+        <ownedAttributesInternal>
+          <property Id="b84f51f7-6e40-43e0-8430-5f6225340420" name="bookID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c477bc3f-7ae3-457f-a899-ad2d18e9abff" />
+          </property>
+          <property Id="97373be0-3b1e-4d6e-b4c6-0306995d2096" name="bookTitle" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0f256a5b-8784-44e0-8973-56e0e17b4329" />
+          </property>
+          <property Id="b6765d4f-b417-4abb-8824-726b018f8293" name="bookAuthor" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5a528613-b9e3-45c6-ae64-85699dbb7a6a" />
+          </property>
+          <property Id="79b84df6-e483-4307-8d36-6f45504aa0be" name="bookPress" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2ff52acf-8de0-4659-9bca-adb1eeea7b54" />
+          </property>
+          <property Id="3f4692f2-11dd-466b-b49a-8a2d7a38318d" name="bookPubDate" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3062a623-9115-4906-a10c-e8d2f9092b53" />
+          </property>
+          <property Id="781494e9-8e92-4214-9290-f504bf03fb1e" name="bookImage" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2d2769ab-383d-471c-a83b-f915ce62ba28" />
+          </property>
+          <property Id="6697e261-90d1-4c6a-a0bd-69e37ba417e2" name="bookCatalogueID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0e341663-be71-41dc-b7a6-11aaf3056326" />
+          </property>
+          <property Id="c8af32c6-b7cc-4411-bd3e-2f5170a4b0b4" name="bookTypeID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7f9bfa90-d5ef-492b-aa13-9e927ed1ee3a" />
+          </property>
+          <property Id="ea8b4947-0051-4d7e-b3cd-d841db17b153" name="bookSummary" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="efcae708-727e-4edc-a10f-4e0a24ff16c9" />
+          </property>
+          <property Id="e88576dd-dfe6-4105-9204-36e134cd6878" name="bookURL" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5608c157-9d65-4abc-9307-2b2fe62d141e" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bd10c6c7-22f4-44fa-8f61-5ea65762f145" name="Catalogue" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7871da41-a2e6-471f-9f0f-a7475310169b" />
+        <generalsInternal>
+          <generalization Id="e8aabc6b-a3d6-435a-b9ff-c8bcdc3f3cb7" isSubstitutable="false">
+            <classMoniker Id="f889e3ff-ef20-401d-a4ec-74c4255fd11a" LastKnownName="SysXCode" />
+            <elementDefinition Id="850a70de-e6b8-463f-aace-74de12e60fd6" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3aa7e9e0-e8a4-42f4-9c23-7eb637df4732" name="ResType" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="29646d0a-2def-4a31-a24b-aeffbd0b84f0" />
+        <generalsInternal>
+          <generalization Id="cf5fd792-ae2f-4bbd-bcf2-686df2d61452" isSubstitutable="false">
+            <classMoniker Id="f889e3ff-ef20-401d-a4ec-74c4255fd11a" LastKnownName="SysXCode" />
+            <elementDefinition Id="3e28fd5f-df6e-4067-b2d5-134d8c7f9547" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8fbe44e6-1dd1-47ae-967f-63be41252b64" name="BookType" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="94477a17-5cad-47cc-acbd-50ab753cafaa" />
+        <generalsInternal>
+          <generalization Id="9b9ae032-96ad-4f31-8f1b-f7f19f2309b6" isSubstitutable="false">
+            <classMoniker Id="f889e3ff-ef20-401d-a4ec-74c4255fd11a" LastKnownName="SysXCode" />
+            <elementDefinition Id="bddc10c7-e11e-4036-ae59-a6695af2bf36" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7dbf16ab-f75b-48a2-843a-08cdb6543a73" name="BookPage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="05034702-12be-4acd-836f-9bea73137171" />
+        <targetEnds>
+          <association Id="6c0313ce-9534-4fec-ad71-4d5115801589" isDerived="false" sourceEndRoleName="BookPage" targetEndRoleName="Book" isLeaf="false" isAbstract="false">
+            <classMoniker Id="53ef36a1-9cb4-4e4a-b012-c2debf4966de" LastKnownName="Book" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="33a2eb40-0de6-4b37-aa55-48f4199803ba" name="BookPage" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b6efa57f-a7a1-4b2f-9fe8-926e0fe482c2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c7e6c36a-667e-45e6-9f42-0fcda2174328" name="Book" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="26d98540-4e0e-4286-a351-685aa270b124" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4430c622-79e0-41f2-b337-4d0bcb4be1ed" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="65a9d4fc-f28b-4142-b423-c99a33e4e49a" name="bpID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="350f0af6-c02b-4531-b36c-3dbf9e0338e5" />
+          </property>
+          <property Id="c58ed2e9-41d6-4180-aac1-a0c7c2241b7e" name="bpIndex" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7a40b2a9-b396-4190-acb6-b70131f41c99" />
+          </property>
+          <property Id="ec188656-737d-4258-b976-568644d59c45" name="bpUrl" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3e3e3449-22ca-4b80-9836-ccb8343edddc" />
+          </property>
+          <property Id="225df371-a3dd-40f9-b094-b709aaff5584" name="bpTitle" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4507087f-7938-42f7-88c0-f91a5a008c29" />
+          </property>
+          <property Id="553b4dfa-8d83-4ebd-aa87-27651563547e" name="bpContent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7fe4a5e5-e18f-440e-85c8-9f6a47ca9667" />
+          </property>
+          <property Id="4a9e7371-451a-405e-a68c-2f1ec131b311" name="bookID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="80a78c68-0b87-4570-a458-024ff730db85" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="58da9d6c-a897-4c11-ae1d-a6228392e336" name="_1建模项目">
+    <elementDefinition Id="b467b810-0b7e-443a-9db6-47f927f92ab5" />
+    <profileInstances>
+      <packageHasProfileInstances Id="cfc80951-1ad7-43f6-b51c-90d32694ee15">
+        <profileInstance Id="9f81d419-0e67-48a8-a57e-6321129cdb21" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="4da2702f-00d0-4e82-8d00-cb4bb5c39643">
+        <profileInstance Id="5736128e-49c8-4c1f-9b54-9e6c1575cffb" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

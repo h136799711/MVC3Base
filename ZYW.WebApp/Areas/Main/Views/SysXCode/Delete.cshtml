@@ -1,0 +1,53 @@
+﻿@model ZYW.Model.SysXCode
+
+@{
+    Layout = "~/Areas/Main/Views/Shared/MainAreaLayout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>@ViewBag.DeleteConfirm</h3>
+<fieldset>
+    <legend>@ViewBag.SysXCode</legend>
+    
+    <div class="display-label">
+            @Html.LabelFor(model => model.XCode)</div>
+    <div class="display-field">@Model.XCode</div>
+
+    <div class="display-label">
+            @Html.LabelFor(model => model.XName)</div>
+    <div class="display-field">@Model.XName</div>
+
+    <div class="display-label">
+            @Html.LabelFor(model => model.XOrderNumber)</div>
+    <div class="display-field">@Model.XOrderNumber</div>
+
+    <div class="display-label">
+            @Html.LabelFor(model => model.XParentID)</div>
+    <div class="display-field">@Model.XParentID</div>
+
+    <div class="display-label">
+            @Html.LabelFor(model => model.XDepth)</div>
+    <div class="display-field">@Model.XDepth</div>
+
+    <div class="display-label">
+            @Html.LabelFor(model => model.XSource)</div>
+    <div class="display-field">@Model.XSource</div>
+
+    <div class="display-label">
+            @Html.LabelFor(model => model.XFlag)</div>
+    <div class="display-field">@Model.XFlag</div>
+
+    <div class="display-label">
+            @Html.LabelFor(model => model.XRemark)</div>
+    <div class="display-field">@Model.XRemark</div>
+</fieldset>
+@using (Html.BeginForm()) {
+        @Html.HiddenFor(model => model.XID)
+    <p>
+        <input type="submit" value="@ViewBag.Delete" /> |
+        @Html.ActionLink((string)ViewBag.BackToList, "Index")
+    </p>
+}
+
+

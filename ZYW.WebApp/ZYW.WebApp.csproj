@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{33B25A26-4669-42DF-97E3-956DA5856EFE}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZYW.WebApp</RootNamespace>
+    <AssemblyName>ZYW.WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+    <PublishDatabaseSettings>
+      <Objects>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc3.2.6.3.862\lib\NET40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net1.2.11.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySqlConnector\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.15.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.0.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="RouteDebugger">
+      <HintPath>..\packages\RouteDebugger2.1.3.0\RouteDebugger.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages" />
+    <Reference Include="System.Web.Helpers" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\ViewBagMessage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewBagMessage.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ViewBagMessage.zh-cn1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewBagMessage.zh-cn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ViewBagMessage.en-us.designer.cs">
+      <DependentUpon>ViewBagMessage.en-us.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\Main\Controllers\IndexController.cs" />
+    <Compile Include="Areas\Main\Controllers\SysXCodeController.cs" />
+    <Compile Include="Areas\Main\Controllers\TestController.cs" />
+    <Compile Include="Areas\Main\MainAreaRegistration.cs" />
+    <Compile Include="Controllers\AjaxHtmlController.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\a\base.css" />
+    <Content Include="Content\a\images\loading.gif" />
+    <Content Include="Content\a\images\loading2.jpg" />
+    <Content Include="Content\a\layout.css" />
+    <Content Include="Content\a\skin.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\loading2.jpg" />
+    <Content Include="Scripts\jquery\1.9.1-vsdoc.js" />
+    <Content Include="Scripts\jquery\1.9.1.min.js" />
+    <Content Include="Scripts\myJqExt.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Main\Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Main\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Main\Views\Test\Index.cshtml" />
+    <Content Include="Areas\Main\Views\Test\Create.cshtml" />
+    <Content Include="log4net.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Main\Views\Shared\MainAreaLayout.cshtml" />
+    <Content Include="Areas\Main\Views\SysXCode\Create.cshtml" />
+    <Content Include="Areas\Main\Views\SysXCode\Index.cshtml" />
+    <Content Include="Areas\Main\Views\SysXCode\Edit.cshtml" />
+    <Content Include="Areas\Main\Views\SysXCode\Delete.cshtml" />
+    <EmbeddedResource Include="App_GlobalResources\ViewBagMessage.zh-cn.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ViewBagMessage.zh-cn1.designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Areas\Main\Views\SysXCode\Details.cshtml" />
+    <Content Include="Areas\Main\Views\Index\Index.cshtml" />
+    <None Include="Areas\Main\Views\Test\Details.cshtml" />
+    <None Include="Areas\Main\Views\Test\Edit.cshtml" />
+    <Content Include="packages.config" />
+    <None Include="Views\AjaxHtml\Index.cshtml" />
+    <None Include="Views\Error\Unknown.cshtml" />
+    <Content Include="Views\Error\_400.cshtml" />
+    <Content Include="Views\Error\_401.cshtml" />
+    <Content Include="Views\Error\_300.cshtml" />
+    <Content Include="Views\Error\_301.cshtml" />
+    <Content Include="Views\Error\_302.cshtml" />
+    <Content Include="Views\Error\_303.cshtml" />
+    <None Include="Views\Error\_403.cshtml" />
+    <None Include="Views\Error\_404.cshtml" />
+    <Content Include="Views\Error\_408.cshtml" />
+    <Content Include="Views\Error\_409.cshtml" />
+    <Content Include="Views\Error\_413.cshtml" />
+    <Content Include="Views\Error\_414.cshtml" />
+    <Content Include="Views\Error\_415.cshtml" />
+    <Content Include="Views\Error\_500.cshtml" />
+    <Content Include="Views\Error\_501.cshtml" />
+    <Content Include="Views\Error\_502.cshtml" />
+    <Content Include="Views\Error\_504.cshtml" />
+    <Content Include="Views\Error\_505.cshtml" />
+    <Content Include="Views\Shared\_ErrorLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZYW.WebApp.Common\ZYW.WebApp.Common.csproj">
+      <Project>{D44BBA7E-C7E0-4B2D-997E-E635D3333982}</Project>
+      <Name>ZYW.WebApp.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZYW.DBContexts\ZYW.DBContexts.csproj">
+      <Project>{4DD6A65A-AAD3-4338-887A-0D0BAF0B6160}</Project>
+      <Name>ZYW.DBContexts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZYW.Infrastructure\ZYW.Infrastructure.csproj">
+      <Project>{6A6922D6-ADE2-4ACF-AA49-48E542E0C9EC}</Project>
+      <Name>ZYW.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZYW.IRepositorys\ZYW.IRepositorys.csproj">
+      <Project>{2D901C4A-F6FF-4244-AC03-9EA4C62ABBF1}</Project>
+      <Name>ZYW.IRepositorys</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZYW.IServices\ZYW.IServices.csproj">
+      <Project>{16155343-D1DA-449C-B4F9-D35F3B89F6C7}</Project>
+      <Name>ZYW.IServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZYW.Model\ZYW.Model.csproj">
+      <Project>{4FAA23A4-7F25-4929-93F8-333390684A87}</Project>
+      <Name>ZYW.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZYW.Repository\ZYW.Repository.csproj">
+      <Project>{B7AAC3D7-740B-4AD4-8A7A-1508ECDD8277}</Project>
+      <Name>ZYW.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZYW.Services\ZYW.Services.csproj">
+      <Project>{9AF113A6-A6BF-424F-BA98-265B8599A53D}</Project>
+      <Name>ZYW.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\ViewBagMessage.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ViewBagMessage.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\ViewBagMessage.en-us.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ViewBagMessage.en-us.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>8811</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

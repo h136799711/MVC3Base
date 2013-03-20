@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="87ee062c-d205-4099-b973-ece19dcabb62" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="743bf651-8b0e-42e5-9937-685fb825f430" name="Comment1">
+      <body>数据库访问层</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="c758b603-b88a-4f50-8280-6541b423df03" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="71956ef6-2eac-4ad4-8275-ac7f31a00b69" name="Comment2">
+      <body>服务层</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="a8a94953-a740-484c-9986-0b655e174624" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+    <comment Id="ba1aca82-151f-462b-8eda-b7fe39041b9f" name="Comment3">
+      <body>应用层</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="0af907b8-a0a3-44cc-a7d5-f4fff24cd941" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="c758b603-b88a-4f50-8280-6541b423df03" name="1-DataBaseLayer">
+      <childLayers>
+        <layer Id="b8ddc73f-c98d-4e9f-8e44-6dd2b15540cb" name="ZYW.Infrastructure">
+          <references>
+            <reference Id="7c5282f3-ed15-4ad5-8ea0-94d3dda5c6df" name="ZYW.Infrastructure">
+              <ArtifactNode Label="ZYW.Infrastructure" Category="CodeSchema_Project" Id="(Assembly=../ZYW.Infrastructure/ZYW.Infrastructure.csproj)" />
+              <ExpandedNode Id="(Assembly=ZYW.Infrastructure)" Label="ZYW.Infrastructure.dll" Category="FileSystem.Category.FileOfType.dll">
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="fb04424e-b2c7-4a68-a877-e2ecd1cb3de4" name="ZYW.IRepositorys">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="069a04f8-d4ba-4799-a4ec-3088ac0377df" direction="Forward">
+              <layerMoniker Id="15d4b608-7ad7-4763-abcc-410c5993b684" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="98074534-afef-4bc4-be58-4abd1fc61c6f" direction="Forward">
+              <layerMoniker Id="b8ddc73f-c98d-4e9f-8e44-6dd2b15540cb" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="bd75840b-669e-4e48-ae6a-15b2d123cd0e" name="ZYW.IRepositorys">
+              <ArtifactNode Label="ZYW.IRepositorys" Category="CodeSchema_Project" Id="(Assembly=../ZYW.IRepositorys/ZYW.IRepositorys.csproj)" />
+              <ExpandedNode Id="(Assembly=ZYW.IRepositorys)" Label="ZYW.IRepositorys.dll" Category="FileSystem.Category.FileOfType.dll">
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="2d3ff0c8-8c9d-4f4c-b28b-396a87f451b3" name="ZYW.DBContexts">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="0c74c616-f4de-4aa4-bffb-a50f3d6f93bf" direction="Forward">
+              <layerMoniker Id="b8ddc73f-c98d-4e9f-8e44-6dd2b15540cb" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="cb3967d4-8306-44f6-87f7-92be629ae390" direction="Forward">
+              <layerMoniker Id="15d4b608-7ad7-4763-abcc-410c5993b684" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="4b2c8fe2-75e5-4fb0-8da5-ec63031fa839" name="ZYW.DBContexts">
+              <ArtifactNode Label="ZYW.DBContexts" Category="CodeSchema_Project" Id="(Assembly=../ZYW.DBContexts/ZYW.DBContexts.csproj)" />
+              <ExpandedNode Id="(Assembly=ZYW.DBContexts)" Label="ZYW.DBContexts.dll" Category="FileSystem.Category.FileOfType.dll">
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="f196dd65-5f22-43cf-a6d0-e52fa22a6bdd" name="ZYW.Repository">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="b31be2c3-60fe-4952-8dcc-99df103dface" direction="Forward">
+              <layerMoniker Id="fb04424e-b2c7-4a68-a877-e2ecd1cb3de4" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="24e13740-ebf4-4fcd-a97e-0cc2bbd991dd" direction="Forward">
+              <layerMoniker Id="b8ddc73f-c98d-4e9f-8e44-6dd2b15540cb" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="13c61888-030f-4e86-9fec-deab2de9ea07" direction="Forward">
+              <layerMoniker Id="15d4b608-7ad7-4763-abcc-410c5993b684" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="c32c313c-0bda-4807-9d19-c4f6e90011c1" direction="Forward">
+              <layerMoniker Id="2d3ff0c8-8c9d-4f4c-b28b-396a87f451b3" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="b54d3732-7355-4ff5-81ec-bad6c312918c" name="ZYW.Repository">
+              <ArtifactNode Label="ZYW.Repository" Category="CodeSchema_Project" Id="(Assembly=../ZYW.Repository/ZYW.Repository.csproj)" />
+              <ExpandedNode Id="(Assembly=ZYW.Repository)" Label="ZYW.Repository.dll" Category="FileSystem.Category.FileOfType.dll">
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="15d4b608-7ad7-4763-abcc-410c5993b684" name="ZYW.Model">
+          <references>
+            <reference Id="ad704b81-1fb7-46b0-b15f-a75355316ee5" name="ZYW.Model">
+              <ArtifactNode Label="ZYW.Model" Category="CodeSchema_Project" Id="(Assembly=../ZYW.Model/ZYW.Model.csproj)" />
+              <ExpandedNode Id="(Assembly=ZYW.Model)" Label="ZYW.Model.dll" Category="FileSystem.Category.FileOfType.dll">
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+      <references>
+        <reference Id="3828e44f-cfba-4821-8cfe-c7b19d4e3700" name="1-DataBaseLayer">
+          <ArtifactNode Label="1-DataBaseLayer" Category="CodeSchema_Project" Id="(Assembly=../1-DataBaseLayer)" />
+          <ExpandedNode Id="(Assembly=ZYW.Infrastructure)" Label="ZYW.Infrastructure.dll" Category="FileSystem.Category.FileOfType.dll">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=ZYW.Model)" Label="ZYW.Model.dll" Category="FileSystem.Category.FileOfType.dll">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=ZYW.IRepositorys)" Label="ZYW.IRepositorys.dll" Category="FileSystem.Category.FileOfType.dll">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=ZYW.Repository)" Label="ZYW.Repository.dll" Category="FileSystem.Category.FileOfType.dll">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=ZYW.DBContexts)" Label="ZYW.DBContexts.dll" Category="FileSystem.Category.FileOfType.dll">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="796ed51f-6c5e-4975-ae43-f97f2476bd88" name="ZYW.IRepositorys">
+          <ArtifactNode Label="ZYW.IRepositorys" Category="CodeSchema_Project" Id="(Assembly=../ZYW.IRepositorys/ZYW.IRepositorys.csproj)" />
+          <ExpandedNode Id="(Assembly=ZYW.IRepositorys)" Label="ZYW.IRepositorys.dll" Category="FileSystem.Category.FileOfType.dll">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="d531bea4-3d53-43aa-825b-8d4c69108ffe" name="ZYW.Model">
+          <ArtifactNode Label="ZYW.Model" Category="CodeSchema_Project" Id="(Assembly=../ZYW.Model/ZYW.Model.csproj)" />
+          <ExpandedNode Id="(Assembly=ZYW.Model)" Label="ZYW.Model.dll" Category="FileSystem.Category.FileOfType.dll">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="9a4763a9-7294-4111-aa57-4bc291dfc22e" name="ZYW.Repository">
+          <ArtifactNode Label="ZYW.Repository" Category="CodeSchema_Project" Id="(Assembly=../ZYW.Repository/ZYW.Repository.csproj)" />
+          <ExpandedNode Id="(Assembly=ZYW.Repository)" Label="ZYW.Repository.dll" Category="FileSystem.Category.FileOfType.dll">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="a8a94953-a740-484c-9986-0b655e174624" name="2-ServiceLayer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="8bbab43f-e258-4283-845c-bf1ef940b4f9" direction="Forward">
+          <layerMoniker Id="c758b603-b88a-4f50-8280-6541b423df03" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="6b63c22d-f272-4573-a581-53a7e3070199" name="ZYW.IServices">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="bd979cf1-887a-4601-a709-9c183814f4e4" direction="Forward">
+              <layerMoniker Id="b8ddc73f-c98d-4e9f-8e44-6dd2b15540cb" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="464affe7-8c51-43fb-9b8b-420356dbee55" direction="Forward">
+              <layerMoniker Id="15d4b608-7ad7-4763-abcc-410c5993b684" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="fec0b1d7-18d5-49d5-ad71-646b5ca8801a" name="ZYW.IServices">
+              <ArtifactNode Label="ZYW.IServices" Category="CodeSchema_Project" Id="(Assembly=../ZYW.IServices/ZYW.IServices.csproj)" />
+              <ExpandedNode Id="(Assembly=ZYW.IServices)" Label="ZYW.IServices.dll" Category="FileSystem.Category.FileOfType.dll">
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="96dcaac4-e430-463c-bacf-ae1e141f72c3" name="ZYW.Services">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="ba524e75-f3ae-45ce-9b4d-067e7ad0bbb2" direction="Forward">
+              <layerMoniker Id="6b63c22d-f272-4573-a581-53a7e3070199" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="ca804bd8-673f-49bd-aa52-328ffbf0ec81" direction="Forward">
+              <layerMoniker Id="fb04424e-b2c7-4a68-a877-e2ecd1cb3de4" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="6b5bb45c-ef56-41c8-9c9a-4c56528e470d" name="ZYW.Services">
+              <ArtifactNode Label="ZYW.Services" Category="CodeSchema_Project" Id="(Assembly=../ZYW.Services/ZYW.Services.csproj)" />
+              <ExpandedNode Id="(Assembly=ZYW.Services)" Label="ZYW.Services.dll" Category="FileSystem.Category.FileOfType.dll">
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+      <references>
+        <reference Id="406bd82d-decb-4750-961b-4406ff5a3eae" name="2-ServiceLayer">
+          <ArtifactNode Label="2-ServiceLayer" Category="CodeSchema_Project" Id="(Assembly=../2-ServiceLayer)" />
+          <ExpandedNode Id="(Assembly=ZYW.IServices)" Label="ZYW.IServices.dll" Category="FileSystem.Category.FileOfType.dll">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=ZYW.Services)" Label="ZYW.Services.dll" Category="FileSystem.Category.FileOfType.dll">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="0af907b8-a0a3-44cc-a7d5-f4fff24cd941" name="3-WebLayer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="c33ba4d3-6cc4-441e-8bb3-487f2a90807c" direction="Forward">
+          <layerMoniker Id="a8a94953-a740-484c-9986-0b655e174624" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="62dfd845-a9fc-4953-bfcd-7432634d6a94" name="ZYW.WebApp">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="2c02400c-bad1-459f-b35a-2ccde5f5d369" direction="Forward">
+              <layerMoniker Id="97b32535-62d9-4895-89f5-62dd18509df6" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="46800060-837e-4f11-a8fc-edb0c69f36c6" direction="Forward">
+              <layerMoniker Id="b8ddc73f-c98d-4e9f-8e44-6dd2b15540cb" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="90df79f5-2537-49f8-89b8-4d8604686613" direction="Forward">
+              <layerMoniker Id="15d4b608-7ad7-4763-abcc-410c5993b684" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <childLayers>
+            <layer Id="67e5b849-3d37-43c4-9f9b-689a3911a242" name="Areas">
+              <childLayers>
+                <layer Id="208bed6e-5c17-4bb1-b617-ba4f6c79b79a" name="Main">
+                  <childLayers>
+                    <layer Id="d35ff4c9-c2e2-4b26-9a0b-bc0a3efe780b" name="Controllers">
+                      <dependencyToLayers>
+                        <dependencyFromLayerToLayer Id="ad676bc1-9056-448b-a0c0-dcf18803e8ea" direction="Forward">
+                          <layerMoniker Id="6b63c22d-f272-4573-a581-53a7e3070199" />
+                        </dependencyFromLayerToLayer>
+                        <dependencyFromLayerToLayer Id="3fd82fcd-2ebe-43d7-8e20-19a3155ad897" direction="Forward">
+                          <layerMoniker Id="b8ddc73f-c98d-4e9f-8e44-6dd2b15540cb" />
+                        </dependencyFromLayerToLayer>
+                        <dependencyFromLayerToLayer Id="54eb84ec-aaf0-489c-9c29-f6f74cef204f" direction="Forward">
+                          <layerMoniker Id="15d4b608-7ad7-4763-abcc-410c5993b684" />
+                        </dependencyFromLayerToLayer>
+                      </dependencyToLayers>
+                      <references>
+                        <reference Id="3bda9e61-6bc1-4464-881f-19fd444522db" name="Controllers">
+                          <ArtifactNode Label="Controllers" Category="CodeSchema_ProjectItem" Id="(Assembly=../ZYW.WebApp/Areas/Main/Controllers/)" />
+                          <ExpandedNode Id="(Assembly=ZYW.WebApp Namespace=ZYW.WebApp.Areas.Main.Controllers Type=TestController)" Label="TestController" Category="CodeSchema_Class">
+                            <LinkCategory Ref="Represents" />
+                          </ExpandedNode>
+                        </reference>
+                      </references>
+                    </layer>
+                  </childLayers>
+                  <references>
+                    <reference Id="5e863dd3-feb2-434a-ac14-8a2c5fed46fd" name="Main">
+                      <ArtifactNode Label="Main" Category="CodeSchema_ProjectItem" Id="(Assembly=../ZYW.WebApp/Areas/Main/)" />
+                      <ExpandedNode Id="(Assembly=ZYW.WebApp Namespace=ZYW.WebApp.Areas.Main.Controllers Type=TestController)" Label="TestController" Category="CodeSchema_Class">
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                      <ExpandedNode Id="(Assembly=ZYW.WebApp Namespace=ZYW.WebApp.Areas.Main Type=MainAreaRegistration)" Label="MainAreaRegistration" Category="CodeSchema_Class">
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                    </reference>
+                  </references>
+                </layer>
+              </childLayers>
+              <references>
+                <reference Id="ad76cf8d-88ca-4ceb-a1fb-38cc92c87232" name="Areas">
+                  <ArtifactNode Label="Areas" Category="CodeSchema_ProjectItem" Id="(Assembly=../ZYW.WebApp/Areas/)" />
+                  <ExpandedNode Id="(Assembly=ZYW.WebApp Namespace=ZYW.WebApp.Areas.Main.Controllers Type=TestController)" Label="TestController" Category="CodeSchema_Class">
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                  <ExpandedNode Id="(Assembly=ZYW.WebApp Namespace=ZYW.WebApp.Areas.Main Type=MainAreaRegistration)" Label="MainAreaRegistration" Category="CodeSchema_Class">
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+                <reference Id="af7914ed-640a-4104-a520-9652e3852aed" name="Main">
+                  <ArtifactNode Label="Main" Category="CodeSchema_ProjectItem" Id="(Assembly=../ZYW.WebApp/Areas/Main/)" />
+                  <ExpandedNode Id="(Assembly=ZYW.WebApp Namespace=ZYW.WebApp.Areas.Main.Controllers Type=TestController)" Label="TestController" Category="CodeSchema_Class">
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                  <ExpandedNode Id="(Assembly=ZYW.WebApp Namespace=ZYW.WebApp.Areas.Main Type=MainAreaRegistration)" Label="MainAreaRegistration" Category="CodeSchema_Class">
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+                <reference Id="79896a54-aafd-444d-b6d8-ea6b114a18e3" name="Controllers">
+                  <ArtifactNode Label="Controllers" Category="CodeSchema_ProjectItem" Id="(Assembly=../ZYW.WebApp/Areas/Main/Controllers/)" />
+                  <ExpandedNode Id="(Assembly=ZYW.WebApp Namespace=ZYW.WebApp.Areas.Main.Controllers Type=TestController)" Label="TestController" Category="CodeSchema_Class">
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+              </references>
+            </layer>
+            <layer Id="57ca22ac-1da2-4f3e-9288-8b06380c179c" name="Controllers">
+              <references>
+                <reference Id="3293033a-580b-4db8-8dd1-d9e7b121e963" name="Controllers">
+                  <ArtifactNode Label="Controllers" Category="CodeSchema_ProjectItem" Id="(Assembly=../ZYW.WebApp/Controllers/)" />
+                  <ExpandedNode Id="(Assembly=ZYW.WebApp Namespace=ZYW.WebApp.Controllers Type=AjaxHtmlController)" Label="AjaxHtmlController" Category="CodeSchema_Class">
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                  <ExpandedNode Id="(Assembly=ZYW.WebApp Namespace=ZYW.WebApp.Controllers Type=ErrorController)" Label="ErrorController" Category="CodeSchema_Class">
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+              </references>
+            </layer>
+          </childLayers>
+          <references>
+            <reference Id="e2bff0ce-ab49-43db-8e06-0e6e5d9fa3a6" name="ZYW.WebApp">
+              <ArtifactNode Label="ZYW.WebApp" Category="CodeSchema_Project" Id="(Assembly=../ZYW.WebApp/ZYW.WebApp.csproj)" />
+              <ExpandedNode Id="(Assembly=ZYW.WebApp)" Label="ZYW.WebApp.dll" Category="FileSystem.Category.FileOfType.dll">
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="97b32535-62d9-4895-89f5-62dd18509df6" name="ZYW.WebApp.Common">
+          <references>
+            <reference Id="2679fa6f-9206-40d5-9e94-338f7fb404b7" name="ZYW.WebApp.Common">
+              <ArtifactNode Label="ZYW.WebApp.Common" Category="CodeSchema_Project" Id="(Assembly=../ZYW.WebApp.Common/ZYW.WebApp.Common.csproj)" />
+              <ExpandedNode Id="(Assembly=ZYW.WebApp.Common)" Label="ZYW.WebApp.Common.dll" Category="FileSystem.Category.FileOfType.dll">
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+      <references>
+        <reference Id="56700bda-a115-40f5-a579-0be7b1e1595b" name="3-WebLayer">
+          <ArtifactNode Label="3-WebLayer" Category="CodeSchema_Project" Id="(Assembly=../3-WebLayer)" />
+          <ExpandedNode Id="(Assembly=ZYW.WebApp.Common)" Label="ZYW.WebApp.Common.dll" Category="FileSystem.Category.FileOfType.dll">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="dd96c395-aa0c-4a39-b725-8ec05e2c401b" name="Scripts">
+          <ArtifactNode Label="Scripts" Category="CodeSchema_ProjectItem" Id="(Assembly=../zyw.webapp/scripts/)" />
+        </reference>
+        <reference Id="ab75e6b9-0235-4989-a770-3ce4fbbcdcd0" name="Controllers">
+          <ArtifactNode Label="Controllers" Category="CodeSchema_ProjectItem" Id="(Assembly=../ZYW.WebApp/Controllers/)" />
+          <ExpandedNode Id="(Assembly=ZYW.WebApp Namespace=ZYW.WebApp.Controllers Type=AjaxHtmlController)" Label="AjaxHtmlController" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=ZYW.WebApp Namespace=ZYW.WebApp.Controllers Type=ErrorController)" Label="ErrorController" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="8e08b6d5-0b60-4117-9bb8-5818d5bf608f" name="Areas">
+          <ArtifactNode Label="Areas" Category="CodeSchema_ProjectItem" Id="(Assembly=../ZYW.WebApp/Areas/)" />
+          <ExpandedNode Id="(Assembly=ZYW.WebApp Namespace=ZYW.WebApp.Areas.Main.Controllers Type=TestController)" Label="TestController" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=ZYW.WebApp Namespace=ZYW.WebApp.Areas.Main Type=MainAreaRegistration)" Label="MainAreaRegistration" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>

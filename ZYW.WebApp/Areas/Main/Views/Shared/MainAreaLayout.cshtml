@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <!-- for VSDOC
+    <script src="../../../../Scripts/myJqExt.js" type="text/javascript"></script> -->
+    <script type="text/javascript" src="../../../../Scripts/jquery/1.9.1-vsdoc.js"></script>
+    <link href="@Url.Content("~/Content/a/base.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/a/layout.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/a/skin.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery/1.9.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/myJqExt.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.ajaxMVC({
+                type: "post",
+                action: "Index",
+                controller: "SysXCode",
+                params: { ID: 1 },
+                beforeSend: function (XMLHttpRequest) {
+                    $("#navigator-list").html("<img src='/images/loading2.jpg' title='载入中'/>");
+                },
+                success: function (data, textStatus) {
+                    console.log(data);
+                    $("#navigator-list").html("Code: " + data[0].XCode + " Name:" + data[0].XName);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    $("#navigator-list").html("请求失败，按F5重试");
+                },
+                complete: function (XMLHttpRequest, textStatus) {
+                }
+            });
+        });
+    </script>
+    @RenderSection("jsAndcss", false)
+</head>
+<body>
+    <div id="page-container">
+        <div id="header">
+            <div class="lang">
+                @Html.ActionLink("English", "English", "Language", new { area = "" }, new { title = "转为英文" })
+                |
+                @Html.ActionLink("中文", "Chinese", "Language", new { area = "" }, new { title = "转为中文" })
+            </div>
+            <div id="navigator-list" class="cb">
+                第一级导航列表 ///////@@{RenderPartialExtensions.RenderPartial(Html,"navigatorList");}
+            </div>
+        </div>
+        <div id="subnav" class="loading">
+            第二级导航
+        </div>
+        <div id="main-body">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

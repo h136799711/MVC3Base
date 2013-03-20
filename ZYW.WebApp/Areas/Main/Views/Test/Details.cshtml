@@ -1,0 +1,23 @@
+﻿@model ZYW.Model.TestModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Test</legend>
+
+    <div class="display-label">testName</div>
+    <div class="display-field">@Model.testName</div>
+
+    <div class="display-label">testDesc</div>
+    <div class="display-field">@Model.testDesc</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.testID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

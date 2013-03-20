@@ -1,0 +1,23 @@
+<GhostDoc>
+  <SpellChecker>
+    <IncludeExtensions>
+    </IncludeExtensions>
+    <IgnoreExtensions>
+    </IgnoreExtensions>
+    <IgnoreFiles>
+    </IgnoreFiles>
+  </SpellChecker>
+  <HelpFile>
+    <OutputPath>D%3a%5cMVCSiteSolution%5cHelp</OutputPath>
+    <SelectedProjects>ZYW.DBContexts%3bZYW.Infrastructure%3bZYW.IRepositorys%3bZYW.IServices%3bZYW.Model%3bZYW.Repository%3bZYW.Services%3bZYW.Test.RepositoryTest%3bZYW.WebApp%3bZYW.WebApp.Common</SelectedProjects>
+    <HtmlHelp1>True</HtmlHelp1>
+    <MSHelp2>False</MSHelp2>
+    <MSHelpViewer>False</MSHelpViewer>
+    <Website>False</Website>
+    <DocumentInternals>True</DocumentInternals>
+    <DocumentProtected>True</DocumentProtected>
+    <DocumentPrivates>True</DocumentPrivates>
+    <HeaderText>+</HeaderText>
+    <FooterHtml></FooterHtml>
+  </HelpFile>
+</GhostDoc>

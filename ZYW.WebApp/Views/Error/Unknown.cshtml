@@ -1,0 +1,15 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+ @{
+    ViewBag.Title = "系统出错了";
+    Layout = "~/Views/Shared/_ErrorLayout.cshtml";
+}
+
+<h2>@ViewData["message"]</h2>
+ 
+@if (Model != null)
+{
+    <p>@Model.Exception.GetType().Name<br />
+    thrown in @Model.ControllerName @Model.ActionName</p>
+    <p>Error Details:</p>
+    <p>@Model.Exception.Message</p>
+}

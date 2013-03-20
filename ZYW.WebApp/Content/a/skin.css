@@ -1,0 +1,50 @@
+﻿/* html元素 */
+body
+{
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    width: 100%;
+}
+a:hover
+{
+    color:Gray;
+}
+
+div#page-container
+{
+    margin: 0 auto;
+    width: 100%;
+    min-height: 640px;
+    background-color:#ececec;
+}
+/* 头部 */
+div#page-container #header
+{
+    width: 100%;
+    height:80px;
+}
+div#page-container #header .lang
+{
+    float: right;
+}
+div#page-container #header #navigator-list
+{
+    border: 1px solid #b4b4b4;
+    background: #fff;
+}
+
+/* 第二级导航 */
+div#page-container #subnav
+{
+    border: 1px solid #b4b4b4;
+    background: #fff;
+}
+
+/* 主体内容 */
+div#page-container #main-body
+{
+    border: 1px solid #b4b4b4;
+    background: #fff;
+}
+
