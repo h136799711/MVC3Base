@@ -14,8 +14,7 @@ div#page-container
 /* 头部 */
 div#page-container #header
 {
-    width: 100%;
-    height:80px;
+    height:auto;
 }
 div#page-container #header .lang
 {
@@ -23,23 +22,45 @@ div#page-container #header .lang
     margin-right:10px;
 }
 div#page-container #header #navigator-list
-{
+{    
+    position:relative;
+    height:2em;
 }
-
+div#page-container #header #navigator-list ul
+{
+    margin:5px auto;
+    position:absolute;
+    right:10px;
+}
+div#page-container #header #navigator-list ul li
+{
+    float:left;
+    width:50px;
+    cursor:pointer;
+    margin-left:5px;
+    margin-right:5px;
+}
+div#page-container #content-container
+{
+    width:100%;
+}
 /* 第二级导航 */
 div#page-container #subnav
 {
     float:left;
     width:260px;
+    height:auto;
     margin:10px;
+    position:static;
 }
 
 /* 主体内容 */
 div#page-container #main-body
 {
     float:left;
-    width: auto;
-    margin:10px;
+    width: 100%;
+    margin-top:10px;
+    min-width:640px;
     border: 1px solid #b4b4b4;
     background: #fff;
 }
@@ -64,10 +85,4 @@ div#page-container #main-body
 .fr
 {
     float:right;
-}
-.loading
-{
-    background-image:url(images/loading2.jpg);
-    height:10px;
-    width:10px;
 }

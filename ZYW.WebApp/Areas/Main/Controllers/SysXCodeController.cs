@@ -81,16 +81,25 @@ namespace ZYW.WebApp.Areas.Main.Controllers
             ViewBag.SysXCode = ViewBagMessage.SysXCode;
 
             #endregion
-
-            IEnumerable list = from sysxcode in this._sysXCodeService.List()
-                                         select new { sysxcode.XCode, sysxcode.XDepth,sysxcode.XFlag,
-                                             sysxcode.XID,sysxcode.XName,sysxcode.XOrderNumber,
-                                             sysxcode.XParentID,sysxcode.XRemark,sysxcode.XSource};
+            
             if (Request.IsAjaxRequest())
             {
+                IEnumerable list = from sysxcode in this._sysXCodeService.List()
+                                   select new
+                                   {
+                                       sysxcode.XCode,
+                                       sysxcode.XDepth,
+                                       sysxcode.XFlag,
+                                       sysxcode.XID,
+                                       sysxcode.XName,
+                                       sysxcode.XOrderNumber,
+                                       sysxcode.XParentID,
+                                       sysxcode.XRemark,
+                                       sysxcode.XSource
+                                   };
                 return Json(list, JsonRequestBehavior.AllowGet);
             }
-            return View(list);
+            return View(this._sysXCodeService.List());
         }
 
         /// <summary>
@@ -224,6 +233,31 @@ namespace ZYW.WebApp.Areas.Main.Controllers
             this._sysXCodeService.Delete(sysXCode);
             this._sysXCodeService.Save();
 
+            return RedirectToAction("Index");
+        }
+
+        /// <summary>
+        /// 返回一级导航
+        /// </summary>
+        /// <returns>ActionResult.</returns>
+        public ActionResult PrimaryNav()
+        {
+            if (Request.IsAjaxRequest())
+            {
+                return Json(this._sysXCodeService.PrimaryNav(), JsonRequestBehavior.AllowGet);
+            }
+            return RedirectToAction("Index");
+        }
+        /// <summary>
+        /// 返回一级导航
+        /// </summary>
+        /// <returns>ActionResult.</returns>
+        public ActionResult SecondNav(string XCode)
+        {
+            if (Request.IsAjaxRequest())
+            {
+                return Json(this._sysXCodeService.SecondNav(XCode), JsonRequestBehavior.AllowGet);
+            }
             return RedirectToAction("Index");
         }
 

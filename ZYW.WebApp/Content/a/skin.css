@@ -1,14 +1,11 @@
 ﻿/* html元素 */
 body
 {
-    margin-left: auto;
-    margin-right: auto;
-    height: 100%;
-    width: 100%;
 }
 a:hover
 {
-    color:Gray;
+    color:#d3caa1;
+    text-decoration:underline;
 }
 
 div#page-container
@@ -21,8 +18,6 @@ div#page-container
 /* 头部 */
 div#page-container #header
 {
-    width: 100%;
-    height:80px;
 }
 div#page-container #header .lang
 {
@@ -39,8 +34,13 @@ div#page-container #subnav
 {
     border: 1px solid #b4b4b4;
     background: #fff;
+    font-size:12px;
 }
 
+div#page-container #subnav ul li a
+{
+    cursor:pointer;
+}
 /* 主体内容 */
 div#page-container #main-body
 {
@@ -48,3 +48,17 @@ div#page-container #main-body
     background: #fff;
 }
 
+
+/* 用于JS动态添加移除的样式 */
+.navclick
+{
+    background-color:#45393b;
+    color:#d3caa1;
+}
+
+.loading
+{
+    background-image:url(images/loading2.jpg);
+    height:10px;
+    width:10px;
+}

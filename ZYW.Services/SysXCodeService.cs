@@ -1,7 +1,7 @@
 ﻿// ***********************************************************************
 // Assembly         : ZYW.Services
 // Author           : hebidu
-// Created          : 03-15-2013
+// Created          : 03-20-2013
 //
 // Last Modified By : hebidu
 // Last Modified On : 03-18-2013
@@ -149,10 +149,29 @@ namespace ZYW.Services
             return this._sysXCodeRepository.GetSingle(t => t.XID == ID);
         }
 
+        /// <summary>
+        /// 返回一级导航
+        /// </summary>
+        /// <returns>IList.</returns>
+        public System.Collections.IEnumerable PrimaryNav()
+        {
+            return this._sysXCodeRepository.PrimaryNav();
+        }
+
+        /// <summary>
+        /// Seconds the nav.
+        /// </summary>
+        /// <returns>IEnumerable.</returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public System.Collections.IEnumerable SecondNav(string XCode)
+        {
+            return this._sysXCodeRepository.SecondNav(XCode);
+        }
+
         #endregion
 
         #region IDataBaseService<SysXCode> 成员
-        
+
         /// <summary>
         /// Gets the single.
         /// </summary>
@@ -166,5 +185,6 @@ namespace ZYW.Services
         }
 
         #endregion
+
     }
 }

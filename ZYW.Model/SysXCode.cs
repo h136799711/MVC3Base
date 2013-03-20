@@ -40,7 +40,7 @@ namespace ZYW.Model
 
         /// <summary>
         /// Gets or sets the XCode.
-        /// 三位一段
+        /// 五位一段
         /// </summary>
         /// <value>The Xcode.</value>
         [Display(Name ="XCode",ResourceType=typeof(ModelDisplayName))]

@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
 // Assembly         : ZYW.IRepositorys
 // Author           : hebidu
-// Created          : 03-15-2013
+// Created          : 03-20-2013
 //
 // Last Modified By : hebidu
-// Last Modified On : 03-15-2013
+// Last Modified On : 03-20-2013
 // ***********************************************************************
 // <copyright file="ISysXCodeRepository.cs" company="XXX">
 //     Copyright (c) XXX. All rights reserved.
@@ -21,6 +21,7 @@ namespace ZYW.IRepositorys
     using System.Text;
     using ZYW.Model;
     using ZYW.Infrastructure;
+    using System.Collections;
 
     #endregion
 
@@ -29,6 +30,16 @@ namespace ZYW.IRepositorys
     /// </summary>
     public interface ISysXCodeRepository:IRepository<SysXCode>
     {
+        /// <summary>
+        /// Primaries the nav.
+        /// </summary>
+        /// <returns>IList.</returns>
+        IEnumerable PrimaryNav();
 
+        /// <summary>
+        /// Seconds the nav.
+        /// </summary>
+        /// <returns>IEnumerable.</returns>
+        IEnumerable SecondNav(string XCode);
     }
 }

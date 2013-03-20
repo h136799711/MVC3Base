@@ -33,10 +33,14 @@ namespace ZYW.WebApp.Controllers
         /// 网站语言设为美式英文
         /// </summary>
         /// <returns>ActionResult.</returns>
-        public ActionResult English()
+        public ActionResult English(string returnUrl)
         {
-            System.Web.Routing.RouteValueDictionary rvd = new System.Web.Routing.RouteValueDictionary();
             this.Session[SessionKey.Language] = LangEnum.EN_US;
+            if (!String.IsNullOrEmpty(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            System.Web.Routing.RouteValueDictionary rvd = new System.Web.Routing.RouteValueDictionary();
             rvd.Add("controller", "Home");
             rvd.Add("action", "Index");
             return RedirectToRoute("Default", rvd);
@@ -46,10 +50,14 @@ namespace ZYW.WebApp.Controllers
         /// 网站语言设为中文
         /// </summary>
         /// <returns>ActionResult.</returns>
-        public ActionResult Chinese()
+        public ActionResult Chinese(string returnUrl)
         {
-            System.Web.Routing.RouteValueDictionary rvd = new System.Web.Routing.RouteValueDictionary();
             this.Session[SessionKey.Language] = LangEnum.ZH_CN;
+            if (!String.IsNullOrEmpty(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            System.Web.Routing.RouteValueDictionary rvd = new System.Web.Routing.RouteValueDictionary();
             rvd.Add("controller", "Home");
             rvd.Add("action", "Index");
             return RedirectToRoute("Default", rvd);

@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
 // Assembly         : ZYW.IServices
 // Author           : hebidu
-// Created          : 03-15-2013
+// Created          : 03-20-2013
 //
 // Last Modified By : hebidu
-// Last Modified On : 03-18-2013
+// Last Modified On : 03-20-2013
 // ***********************************************************************
 // <copyright file="ISysXCodeService.cs" company="XXX">
 //     Copyright (c) XXX. All rights reserved.
@@ -16,6 +16,7 @@ namespace ZYW.IServices
     #region 引用包
 
     using ZYW.Model;
+    using System.Collections;
 
     #endregion
 
@@ -24,6 +25,23 @@ namespace ZYW.IServices
     /// </summary>
     public interface ISysXCodeService:IDataBaseService<SysXCode>
     {
+        /// <summary>
+        /// Gets the by ID.
+        /// </summary>
+        /// <param name="ID">The ID.</param>
+        /// <returns>SysXCode.</returns>
         SysXCode GetByID(long ID);
+
+        /// <summary>
+        /// Primaries the nav.
+        /// </summary>
+        /// <returns>IList.</returns>
+        IEnumerable PrimaryNav();
+
+        /// <summary>
+        /// Seconds the nav.
+        /// </summary>
+        /// <returns>IEnumerable.</returns>
+        IEnumerable SecondNav(string XCode);
     }
 }

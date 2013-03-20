@@ -126,6 +126,22 @@
     <Content Include="Content\a\images\loading2.jpg" />
     <Content Include="Content\a\layout.css" />
     <Content Include="Content\a\skin.css" />
+    <Content Include="Content\jqueryui\flick\images\animated-overlay.gif" />
+    <Content Include="Content\jqueryui\flick\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\jqueryui\flick\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Content\jqueryui\flick\images\ui-bg_flat_55_ffffff_40x100.png" />
+    <Content Include="Content\jqueryui\flick\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\jqueryui\flick\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\jqueryui\flick\images\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="Content\jqueryui\flick\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="Content\jqueryui\flick\images\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="Content\jqueryui\flick\images\ui-icons_0073ea_256x240.png" />
+    <Content Include="Content\jqueryui\flick\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\jqueryui\flick\images\ui-icons_666666_256x240.png" />
+    <Content Include="Content\jqueryui\flick\images\ui-icons_ff0084_256x240.png" />
+    <Content Include="Content\jqueryui\flick\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jqueryui\flick\jquery-ui-1.10.2.custom.css" />
+    <Content Include="Content\jqueryui\flick\1.10.2.min.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -145,8 +161,12 @@
     <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="Images\loading.gif" />
     <Content Include="Images\loading2.jpg" />
+    <Content Include="Scripts\AjaxPost.js" />
     <Content Include="Scripts\jquery\1.9.1-vsdoc.js" />
     <Content Include="Scripts\jquery\1.9.1.min.js" />
+    <Content Include="Scripts\jquery\easyui\1.3.2.min.js" />
+    <Content Include="Scripts\jquery\ui\1.10.2.js" />
+    <Content Include="Scripts\jquery\ui\1.10.2.min.js" />
     <Content Include="Scripts\myJqExt.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
