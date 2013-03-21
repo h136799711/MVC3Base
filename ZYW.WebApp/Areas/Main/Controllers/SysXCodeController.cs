@@ -23,6 +23,8 @@ namespace ZYW.WebApp.Areas.Main.Controllers
     using System.Collections.Generic;
     using System.Linq;
     using System.Collections;
+    using System;
+    using ZYW.WebApp.ViewModel;
 
     #endregion
 
@@ -240,26 +242,32 @@ namespace ZYW.WebApp.Areas.Main.Controllers
         /// 返回一级导航
         /// </summary>
         /// <returns>ActionResult.</returns>
-        public ActionResult PrimaryNav()
+        public ActionResult AdminNav()
         {
             if (Request.IsAjaxRequest())
             {
-                return Json(this._sysXCodeService.PrimaryNav(), JsonRequestBehavior.AllowGet);
+                return Json(this._sysXCodeService.AdminNav(), JsonRequestBehavior.AllowGet);
             }
             return RedirectToAction("Index");
         }
+
         /// <summary>
-        /// 返回一级导航
+        /// 返回子导航
         /// </summary>
         /// <returns>ActionResult.</returns>
-        public ActionResult SecondNav(string XCode)
+        public ActionResult SubNavOf(long ID)
         {
+            if (!String.IsNullOrEmpty(Request.Form["ID"]))
+            {
+                ID = long.Parse(Request.Form["ID"]);
+            }
             if (Request.IsAjaxRequest())
             {
-                return Json(this._sysXCodeService.SecondNav(XCode), JsonRequestBehavior.AllowGet);
+                return Json(this._sysXCodeService.SubNavOf(ID), JsonRequestBehavior.AllowGet);
             }
             return RedirectToAction("Index");
         }
+
 
         #endregion
     }

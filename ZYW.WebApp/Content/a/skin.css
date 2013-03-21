@@ -4,7 +4,7 @@ body
 }
 a:hover
 {
-    color:#d3caa1;
+    color:#77a6ff;
     text-decoration:underline;
 }
 
@@ -52,8 +52,8 @@ div#page-container #main-body
 /* 用于JS动态添加移除的样式 */
 .navclick
 {
-    background-color:#45393b;
-    color:#d3caa1;
+    background-color:#8c14ff;
+    color:#ffffff;
 }
 
 .loading

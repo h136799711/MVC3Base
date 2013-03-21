@@ -34,7 +34,15 @@ namespace ZYW.Repository
     {
         #region 属性
 
+        /// <summary>
+        /// 分割的位数
+        /// </summary>
         public static readonly int SplitBits = 5;
+
+        /// <summary>
+        /// 后台管理导航的编码
+        /// </summary>
+        public static readonly string AdminNavCode = "admin";
 
         /// <summary>
         /// Gets or sets the context.
@@ -95,54 +103,29 @@ namespace ZYW.Repository
         /// 返回一级目录
         /// </summary>
         /// <returns>IList.</returns>
-        public System.Collections.IEnumerable PrimaryNav()
+        public System.Collections.IEnumerable AdminNav()
         {
-            Expression<Func<SysXCode, bool>> filter = s=>s.XParentID == 0;
+            Expression<Func<SysXCode, bool>> filter = s=>s.XCode==AdminNavCode && s.XParentID == 0;
             Func<IQueryable<SysXCode>, IOrderedQueryable<SysXCode>> orderBy = t=>t.OrderBy(s=>s.XOrderNumber);
-            IEnumerable list = from nav in this.Get(filter, orderBy).ToList() select new { nav.XName, nav.XCode };
-
+            IEnumerable list = from nav in this.Get(filter, orderBy).ToList() select new { nav.XName, nav.XID };
             return list;
         }
 
         #endregion
 
         #region ISysXCodeRepository 成员
-
-
-        /// <summary>
-        /// Seconds the nav.
-        /// </summary>
-        /// <param name="XCode">The X code.</param>
-        /// <returns>IEnumerable.</returns>
-        public IEnumerable SecondNav(string XCode)
-        {            
-            return Nav(XCode,2);
-        }
-
-        /// <summary>
-        /// Seconds the nav.
-        /// </summary>
-        /// <param name="XCode">The X code.</param>
-        /// <returns>IEnumerable.</returns>
-        public IEnumerable ThirdNav(string XCode)
-        {
-            return Nav(XCode, 3);
-        }
-
+                
         /// <summary>
         /// Navs the specified X code.
         /// </summary>
         /// <param name="XCode">The X code.</param>
-        /// <param name="depth">The depth.</param>
         /// <returns>IEnumerable.</returns>
-        private IEnumerable Nav(string XCode, int depth)
+        public IEnumerable SubNavOf(long ID)
         {
-
-            Expression<Func<SysXCode, bool>> filter = s => s.XCode.Length == depth * SplitBits && s.XCode.Substring(0, 5*(depth-1)) == XCode;
+            Expression<Func<SysXCode, bool>> filter = s => s.XParentID == ID;
             Func<IQueryable<SysXCode>, IOrderedQueryable<SysXCode>> orderBy = t => t.OrderBy(s => s.XOrderNumber);
-            IEnumerable list = from nav in this.Get(filter, orderBy).ToList() select new { nav.XName, nav.XSource,nav.XCode };
-
-            return list;
+            IEnumerable<SysXCode> list = this.Get(filter, orderBy);
+            return from nav in list select new { nav.XName, nav.XSource, nav.XID};
         }
         
         #endregion

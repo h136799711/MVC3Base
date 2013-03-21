@@ -48,10 +48,9 @@ div#page-container #content-container
 div#page-container #subnav
 {
     float:left;
-    width:260px;
+    width:300px;
     height:auto;
-    margin:10px;
-    position:static;
+    margin-left:-100%;
 }
 
 /* 主体内容 */
@@ -59,8 +58,6 @@ div#page-container #main-body
 {
     float:left;
     width: 100%;
-    margin-top:10px;
-    min-width:640px;
     border: 1px solid #b4b4b4;
     background: #fff;
 }

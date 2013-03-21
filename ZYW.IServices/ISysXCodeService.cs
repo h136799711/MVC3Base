@@ -36,12 +36,12 @@ namespace ZYW.IServices
         /// Primaries the nav.
         /// </summary>
         /// <returns>IList.</returns>
-        IEnumerable PrimaryNav();
+        IEnumerable AdminNav();
 
         /// <summary>
         /// Seconds the nav.
         /// </summary>
         /// <returns>IEnumerable.</returns>
-        IEnumerable SecondNav(string XCode);
+        IEnumerable SubNavOf(long ID);
     }
 }

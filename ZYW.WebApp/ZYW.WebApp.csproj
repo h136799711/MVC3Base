@@ -119,6 +119,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\SysXCodeVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\a\base.css" />
@@ -165,6 +166,7 @@
     <Content Include="Scripts\jquery\1.9.1-vsdoc.js" />
     <Content Include="Scripts\jquery\1.9.1.min.js" />
     <Content Include="Scripts\jquery\easyui\1.3.2.min.js" />
+    <Content Include="Scripts\jquery\jsrender.js" />
     <Content Include="Scripts\jquery\ui\1.10.2.js" />
     <Content Include="Scripts\jquery\ui\1.10.2.min.js" />
     <Content Include="Scripts\myJqExt.js" />

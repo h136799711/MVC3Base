@@ -153,9 +153,9 @@ namespace ZYW.Services
         /// 返回一级导航
         /// </summary>
         /// <returns>IList.</returns>
-        public System.Collections.IEnumerable PrimaryNav()
+        public System.Collections.IEnumerable AdminNav()
         {
-            return this._sysXCodeRepository.PrimaryNav();
+            return this._sysXCodeRepository.AdminNav();
         }
 
         /// <summary>
@@ -163,9 +163,9 @@ namespace ZYW.Services
         /// </summary>
         /// <returns>IEnumerable.</returns>
         /// <exception cref="System.NotImplementedException"></exception>
-        public System.Collections.IEnumerable SecondNav(string XCode)
+        public System.Collections.IEnumerable SubNavOf(long ID)
         {
-            return this._sysXCodeRepository.SecondNav(XCode);
+            return this._sysXCodeRepository.SubNavOf(ID);
         }
 
         #endregion

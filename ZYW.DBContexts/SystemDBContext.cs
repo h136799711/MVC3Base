@@ -19,6 +19,8 @@ namespace ZYW.DBContexts
     using System.Data.Entity;
     using ZYW.Infrastructure;
     using ZYW.Model;
+    using System.Data.Entity.Infrastructure;
+    using System.Data.Objects;
 
     #endregion
 
@@ -60,6 +62,7 @@ namespace ZYW.DBContexts
             : base()
         {
             Database.SetInitializer<SystemDBContext>(new DropCreateDatabaseIfModelChanges<SystemDBContext>());
+            ((IObjectContextAdapter)this).ObjectContext.ContextOptions.LazyLoadingEnabled = false;
         }
 
         /// <summary>
@@ -71,7 +74,8 @@ namespace ZYW.DBContexts
         public SystemDBContext(string nameOrConnectionString)
             : base(nameOrConnectionString)
         {
-            Database.SetInitializer<SystemDBContext>(new DropCreateDatabaseIfModelChanges<SystemDBContext>());
+            Database.SetInitializer<SystemDBContext>(new DropCreateDatabaseIfModelChanges<SystemDBContext>()); 
+            ((IObjectContextAdapter)this).ObjectContext.ContextOptions.LazyLoadingEnabled = false;
         }
 
         #endregion
