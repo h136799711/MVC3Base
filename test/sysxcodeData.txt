@@ -1,6 +1,0 @@
-'3', 'admin', '系统管理', '100', '0', '0', '/Main/Index', '1', NULL
-'4', 'admin', 'test', '55', '0', '0', '/Main/Index', '1', NULL
-'5', 'admin', 'test3', '66', '0', '0', '/Main/Index', '1', NULL
-'6', 'adminAddXD', '系统编码', '0', '3', '0,1', 'text', '1', NULL
-'7', 'adminAddXDView0', '查看', '0', '6', '0,1,2', '/Main/SysXCode/View', '1', NULL
-'8', 'adminTest0', '测试', '1', '3', '0,1', 'text', '1', NULL
