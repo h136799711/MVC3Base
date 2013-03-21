@@ -50,37 +50,6 @@ $.extend({ mvc: {
 //sysxcode
 
 $.extend($.mvc, { sysxcode: {
-    LoadSecondNav: function (params) {
-        var id = "#" + params.data.id;
-        var settings = $.mvc.sysxcode.LoadSecondNav.settings || {};
-        if (arguments.length == 2) {
-            settings = arguments[1] || {};
-        }
-        $.mvc.ajax({
-            type: "post",
-            action: "SecondNav",
-            controller: "SysXCode",
-            params: { XCode: params.data.xcode },
-            beforeSend: settings.beforeSend || function (XMLHttpRequest) {
-                $(id).html("<img src='/images/loading2.jpg' title='载入中'/>");
-            },
-            success: settings.success || function (data, textStatus) {
-                if (!data) { alert("服务器数据错误"); }
-
-                $(id).empty();
-                for (var i = 0; i < data.length; i++) {
-                    $("<h3></h3>").append(data[i].XName).appendTo($(id));
-                    $(id).append($("<div>第三级目录</div>"));
-                }
-                $(id).accordion();
-            },
-            error: settings.error || function (XMLHttpRequest, textStatus, errorThrown) {
-                $(id).html("请求失败，<a href='' onclick='LoadSecondNav(" + params.data.XCode + ")'> 点击重试 </a> ");
-            },
-            complete: settings.complete || function (XMLHttpRequest, textStatus) {
-            }
-        });
-    },
     /// 第二个参数 object 
     /// subnav是数据返回显示的元素id
     /// process 是对每个a元素进行处理，加样式等
@@ -122,7 +91,73 @@ $.extend($.mvc, { sysxcode: {
                 $("a.defaultLoad").trigger("click");
             }
         });
-    }
+    }，
+    
+    LoadSecondNav: function (params) {
+        var id = "#" + params.data.id;
+        var settings = $.mvc.sysxcode.LoadSecondNav.settings || {};
+        if (arguments.length == 2) {
+            settings = arguments[1] || {};
+        }
+        $.mvc.ajax({
+            type: "post",
+            action: "SecondNav",
+            controller: "SysXCode",
+            params: { XCode: params.data.xcode },
+            beforeSend: settings.beforeSend || function (XMLHttpRequest) {
+                $(id).html("<img src='/images/loading2.jpg' title='载入中'/>");
+            },
+            success: settings.success || function (data, textStatus) {
+                if (!data) { alert("服务器数据错误"); }
+
+                $(id).empty();
+                for (var i = 0; i < data.length; i++) {
+                    $("<h3></h3>").append(data[i].XName).appendTo($(id));
+                    $(id).append($("<div>第三级目录</div>"));
+                }
+                $(id).accordion();
+            },
+            error: settings.error || function (XMLHttpRequest, textStatus, errorThrown) {
+                $(id).html("请求失败，<a href='' onclick='LoadSecondNav(" + params.data.XCode + ")'> 点击重试 </a> ");
+            },
+            complete: settings.complete || function (XMLHttpRequest, textStatus) {
+            }
+        });
+    },
+    LoadThirdNav: function (params) {
+        var id = "#" + params.data.id;
+        var settings = $.mvc.sysxcode.LoadThirdNav.settings || {};
+        if (arguments.length == 2) {
+            settings = arguments[1] || {};
+        }
+        $.mvc.ajax({
+            type: "post",
+            action: "ThirdNav",
+            controller: "SysXCode",
+            params: { XCode: params.data.xcode },
+            beforeSend: settings.beforeSend || function (XMLHttpRequest) {
+                $(id).html("<img src='/images/loading2.jpg' title='载入中'/>");
+            },
+            success: settings.success || function (data, textStatus) {
+                if (!data) { alert("服务器数据错误"); }
+
+                $(id).empty();
+                var ul = $("<ul></ul>");
+                for (var i = 0; i < data.length; i++) {
+                    var li = $("<li></li>");
+                    var a = $("<a></a>");
+                    a.append(data[i].XName).appendTo(li);
+                    li.appendTo(ul);
+                }
+                $(id).append(ul);
+            },
+            error: settings.error || function (XMLHttpRequest, textStatus, errorThrown) {
+                $(id).html("请求失败，<a href='' onclick='LoadSecondNav(" + params.data.XCode + ")'> 点击重试 </a> ");
+            },
+            complete: settings.complete || function (XMLHttpRequest, textStatus) {
+            }
+        });
+    },
 }
 });
 $.mvc.sysxcode.LoadSecondNav.settings = { };
