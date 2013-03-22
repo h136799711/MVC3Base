@@ -1,0 +1,36 @@
+记录时间：2013-03-20 08:34:23,812 线程ID:[4] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.InvalidOperationException: 传入字典的模型项的类型为“System.Linq.Enumerable+WhereSelectListIterator`2[ZYW.Model.SysXCode,<>f__AnonymousType5`9[System.String,System.String,System.Int16,System.Int64,System.String,System.Int32,System.Int64,System.String,System.String]]”，但此字典需要类型“System.Collections.Generic.IEnumerable`1[ZYW.Model.SysXCode]”的模型项。
+   在 System.Web.Mvc.ViewDataDictionary`1.SetModel(Object value)
+   在 System.Web.Mvc.ViewDataDictionary..ctor(ViewDataDictionary dictionary)
+   在 System.Web.Mvc.WebViewPage`1.SetViewData(ViewDataDictionary viewData)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<>c__DisplayClass1e.<InvokeActionResultWithFilters>b__1b()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+记录时间：2013-03-20 10:29:26,171 线程ID:[19] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.InvalidOperationException: The context cannot be used while the model is being created.
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 ZYW.Repository.GenericRepository`1.Get(Expression`1 filter, Func`2 orderBy, String includeProperties) 位置 D:\github\MVC3Base\ZYW.Repository\GenericRepository.cs:行号 160
+   在 ZYW.Repository.SysXCodeRepository.PrimaryNav() 位置 D:\github\MVC3Base\ZYW.Repository\SysXCodeRepository.cs:行号 100
+   在 ZYW.Services.SysXCodeService.PrimaryNav() 位置 D:\github\MVC3Base\ZYW.Services\SysXCodeService.cs:行号 158
+   在 ZYW.WebApp.Areas.Main.Controllers.SysXCodeController.PrimaryNav() 位置 D:\github\MVC3Base\ZYW.WebApp\Areas\Main\Controllers\SysXCodeController.cs:行号 247
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)

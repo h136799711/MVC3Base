@@ -28,6 +28,9 @@ $.extend({ mvc: {
         var type = settings.type || "post";
         var params = settings.params || '';
         var url = area + '/' + controller + '/' + action;
+        if (settings.url) {
+            url = settings.url;
+        }
         $.mvc._ajax(url, {
             type: type,
             data: params,
@@ -50,65 +53,71 @@ $.extend({ mvc: {
 //sysxcode
 
 $.extend($.mvc, { sysxcode: {
-    /// 第二个参数 object 
-    /// subnav是数据返回显示的元素id
-    /// process 是对每个a元素进行处理，加样式等
-    LoadPrimaryNav: function (id) {
-        id = "#" + id;
-        var settings = {};
-        if (arguments.length == 2) {
-            settings = arguments[1] || settings;
-        }
-        $.mvc.ajax({
-            type: "post",
+    LoadPrimaryNav: function (id, settings) {
+        var id = id;
+        $.mvc.sysxcode.LoadSubNav({ data: { id: id} },
+        {
             action: "AdminNav",
             controller: "SysXCode",
-            beforeSend: settings.beforeSend || function (XMLHttpRequest) {
-                $(id).html("<img src='/images/loading2.jpg' title='载入中'/>");
-            },
-            success: settings.success || function (data, textStatus) {
-                var ul = $("<ul></ul>");
-                for (var nav in data) {
-                    var item = data[nav];
-                    var li = $("<li></li>");
-                    var a = $("<a></a>");
-                    a.on("click", { id: settings.subnav, xid: item.XID }, $.mvc.sysxcode.LoadSecondNav);
-                    if (nav == data.length - 1) {
-                        a.attr("class", "defaultLoad");
-                    }
-                    if (settings.process && typeof (settings.process) == "function") {
-                        settings.process(a);
-                    }
-                    li.append(a.append(item.XName));
-                    li.appendTo(ul);
+            success: function (data, textStatus) {
+                $("#" + id).empty();
+                if (data.length == 0) {
+                    data[0] = { empty: true };
                 }
-                $(id).empty().append(ul);
+                $("#" + id).html($("#PrimaryNavTemplate").render({ innerData: data }));
+                $("#" + id + " a").each(function (index, item) {
+                    if (index == data.length - 1) {
+                        $(item).attr("class", "defaultLoad");
+                    }
+                    $(item).bind("click", { id: settings.containerID, xid: data[index].XID }, function (params) {
+                        $("a.defaultLoad").removeClass("navclick").removeClass("defaultLoad");
+                        $(this).addClass("navclick").addClass("defaultLoad");
+                        if (settings.callback && typeof (settings.callback) == "function") {
+                            settings.callback(params);
+                        }
+                    });
+                });
+
             },
-            error: settings.error || function (XMLHttpRequest, textStatus, errorThrown) {
-                $(id).html("请求失败，<a href='' onclick='LoadPrimaryNav()'> 点击重试 </a> ");
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                $("#" + id).html("请求失败，<a href='' onclick='LoadPrimaryNav()'> 点击重试 </a> ");
             },
-            complete: settings.complete || function (XMLHttpRequest, textStatus) {
+            complete: function (XMLHttpRequest, textStatus) {
                 $("a.defaultLoad").trigger("click");
             }
         });
     },
-    LoadSecondNav: function (params) {
-        var id = "#" + params.data.id;
-        var settings = $.mvc.sysxcode.LoadSecondNav.settings || {};
-        if (arguments.length == 2) {
-            settings = arguments[1] || {};
+    LoadSubNav: function (params, settings) {
+        var id = "#";
+        if (typeof (params.data.id) != "string") {
+            id = params.data.id;            // 元素
+        } else {
+            id = id + params.data.id;      // 元素ID
         }
+        var settings = settings || {};
+        settings.tmpl = settings.tmpl || "SubNavTemplate"; //渲染模板
+        settings.type = settings.type || "post"; // 请求类型
+        settings.subnav = settings.subnav || " a"; // 对此类型元素绑定click事件
+        settings.action = settings.action || "SubNavOf";
+        settings.controller = settings.controller || "SysXCode";
+
         $.mvc.ajax({
-            type: "post",
-            action: "SubNavOf",
-            controller: "SysXCode",
-            params: { ID: params.data.xid },
-            beforeSend: settings.beforeSend || function (XMLHttpRequest) {
+            type: settings.type,
+            action: settings.action,
+            controller: settings.controller,
+            params: { ID: params.data.xid }, // ID 参数
+            beforeSend:settings.beforeSend || function (XMLHttpRequest) {
                 $(id).html("<img src='/images/loading2.jpg' title='载入中'/>");
             },
             success: settings.success || function (data, textStatus) {
                 if (!data && !data.length) {
-                    $(id).html("服务器返回数据错误，<a href='' onclick='LoadSecondNav(" + params.data.XID + ")'> 点击重试 </a> ");
+                    $(id).html("服务器返回数据错误，<a href='' onclick='LoadSubNav(" + params.data.XID + ")'> 点击重试 </a> ");
+                   
+                    return;
+                }
+                if (data.code) {
+                    $(id).html(data.message);
+                    return;
                 }
 
                 $(id).empty();
@@ -119,16 +128,75 @@ $.extend($.mvc, { sysxcode: {
                 if (data.length == 0) {
                     data[0] = { empty: true };
                 }
-                $(id).html($("#SubNavTemplate").render(data));
-                $(id).accordion();
+
+                $(id).html($("#" + settings.tmpl).render(data));
+                $(id + settings.subnav).each(function (index, item) {
+                    $(item).bind("click", { id: $(item).next(), xid: data[index].XID }, function (params) {
+                        if (settings.callback && typeof (settings.callback) == "function") {
+                            settings.callback(params);
+                        }
+                    });
+                });
+                $(id).accordion({
+                    create: function (event, ui) {
+                        ui.header.trigger("click");
+                    },
+                    activate: function (event, ui) {
+                        $(id).accordion("refresh");
+                    },
+                    heightStyle: "content"
+                });
+
+            },
+            error:settings.error || function (XMLHttpRequest, textStatus, errorThrown) {
+                $(id + settings.subnav).find("div").html("请求失败，<a href='' onclick='LoadSubNav(" + params.data.xid + ")'> 点击重试 </a> ");
+            },
+            complete: settings.complete 
+        });
+    },
+    LoadThirdNav: function (params, settings) {
+        var settings = settings;
+        var id = params.data.id;
+        $.mvc.sysxcode.LoadSubNav(params,
+        {
+            success: function (data, textStatus) {
+                if (data && data.code) {
+                    $(id).html(data.message);
+                    return;
+                }
+                $(id).html($("#" + settings.tmpl).render({ innerData: data }));
+                //找到a元素
+                $(id).parent().find("a").each(function (index, item) {
+                    $(item).bind("click", { link: $(item).attr("data-link") }, function (event) {
+                        $.mvc.sysxcode.LoadView(event.data.link, { containerID: "main-body" });
+                    });
+                });
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                $(id).html("请求失败 ");
+            }
+        });
+    },
+    LoadView: function (link, settings) {
+        settings = settings || {};
+        var id = "#" + settings.containerID;
+        console.log(link);
+        $.mvc.ajax({
+            url: link,
+            beforeSend: settings.beforeSend || function (XMLHttpRequest) {
+                $(id).html("<img src='/images/loading2.jpg' title='载入中'/>");
             },
             error: settings.error || function (XMLHttpRequest, textStatus, errorThrown) {
-                $(id).html("请求失败，<a href='' onclick='LoadSecondNav(" + params.data.xid + ")'> 点击重试 </a> ");
+                $(id).html("获取失败");
             },
-            complete: settings.complete || function (XMLHttpRequest, textStatus) {
+            success: settings.success || function (data, textStatus) {
+                if (data.code) {
+                    $(id).html(data.message);
+                    return;
+                }
+                $(id).html(data);
             }
         });
     }
 }
 });
-$.mvc.sysxcode.LoadSecondNav.settings = { };

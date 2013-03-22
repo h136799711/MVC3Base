@@ -13,7 +13,23 @@
     <script src="@Url.Content("~/Scripts/jquery/ui/1.10.2.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery/jsrender.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/myJqExt.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/AjaxPost.js")" type="text/javascript"></script>    
+    <script src="@Url.Content("~/Scripts/AjaxPost.js")" type="text/javascript"></script>
+    <script id="PrimaryNavTemplate" type="text/x-jsrender">
+    <ul>    
+        {{if innerData.length == 0 }}
+            <li>
+                Nothing
+            </li>
+        {{else}}           
+            {{for innerData}}
+            <li>
+                <a href="#" title="{{attr:XName}}">{{>XName}}</a>
+            </li>
+            {{/for}}
+        {{/if}}
+        
+    </ul>    
+    </script>
     <script id="SubNavTemplate" type="text/x-jsrender">
         {{if empty }}
 		    <h3>无子级</h3>
@@ -21,32 +37,41 @@
                 Nothing
             </div>
         {{else}}            
-            {{for}}
 		    <h3>{{>XName}}</h3>
             <div>
+            </div>
+        {{/if}}
+    </script>
+    <script id="SubNavTemplate2" type="text/x-jsrender">
                 <ul>
-                {{if SubCode.length == 0}}
+                {{if innerData.length == 0}}
                     <li>Nothing</li>
                 {{else}}
-                {{for SubCode}}
-                    <li><a href="#" title="{{attr:XName}}">{{>XName}}</a></li>
+                {{for innerData}}
+                    <li><a href="#" data-link="{{attr:XSource}}" >{{>XName}}</a></li>
                 {{/for}}
                 {{/if}}
                 </ul>
-            </div>
-            {{/for}}
-        {{/if}}
     </script>
     <script type="text/javascript">
         $(function () {
-            //DOM渲染自顶向下
-            $.mvc.sysxcode.LoadPrimaryNav("navigator-list", { subnav: "subnav", process: function (a) {
-                $(a).bind("click", function () {
-                    $("a.defaultLoad").removeClass("navclick").removeClass("defaultLoad");
-                    $(this).addClass("navclick").addClass("defaultLoad");
-                });
-            }
+            $(window).bind("resize", function () {
+                $("#main-body").width($("body").outerWidth() - $("#subnav").outerWidth() - $("#main-body").outerWidth() + $("#main-body").innerWidth());
             });
+            $.mvc.sysxcode.LoadPrimaryNav("navigator-list",
+            {containerID: "subnav", 
+                callback: function (params) {
+                    $.mvc.sysxcode.LoadSubNav(params,
+                        {
+                            containerID: "SubNavLinks",
+                            subnav: " h3",
+                            callback: function (params) {
+                                $.mvc.sysxcode.LoadThirdNav(params, { tmpl: "SubNavTemplate2" });
+                            }
+                        })
+                }
+            });
+            $(window).trigger("resize");
         });
     </script>
     @RenderSection("jsAndcss", false)
@@ -63,10 +88,11 @@
             </div>
         </div>
         <div id="content-contianer">
+            <div id="subnav">
+
+            </div>
             <div id="main-body">
                 @RenderBody()
-            </div>
-            <div id="subnav">
             </div>
         </div>
         <div id="accordion">

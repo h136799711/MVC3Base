@@ -105,6 +105,43 @@ namespace ZYW.WebApp.Areas.Main.Controllers
         }
 
         /// <summary>
+        /// 
+        /// GET: /Main/SysXCode/List
+        /// </summary>
+        /// <returns>ActionResult.</returns>
+        public ActionResult List()
+        {
+            #region ViewBag
+
+            ViewBag.XCode = ModelDisplayName.XCode;
+            ViewBag.XName = ModelDisplayName.Name;
+            ViewBag.XOrderNumber = ModelDisplayName.XOrderNumber;
+            ViewBag.XParentID = ModelDisplayName.XParentID;
+            ViewBag.XDepth = ModelDisplayName.XDepth;
+            ViewBag.XSource = ModelDisplayName.XSource;
+            ViewBag.XFlag = ModelDisplayName.XFlag;
+            ViewBag.XRemark = ModelDisplayName.Remark;
+
+            ViewBag.Create = ViewBagMessage.Create;
+            ViewBag.BackToList = ViewBagMessage.BackToList;
+            ViewBag.NoData = ViewBagMessage.NoData;
+            ViewBag.Edit = ViewBagMessage.Edit;
+            ViewBag.Delete = ViewBagMessage.Delete;
+            ViewBag.Details = ViewBagMessage.Details;
+
+            ViewBag.Title = ViewBagMessage.List;
+            ViewBag.SysXCode = ViewBagMessage.SysXCode;
+
+            #endregion
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView(this._sysXCodeService.List());
+            }
+            return View(this._sysXCodeService.List());
+        }
+
+        /// <summary>
         /// Detailses the specified ID.
         /// GET: /Main/SysXCode/Details/5 .
         /// </summary>

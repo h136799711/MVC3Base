@@ -15,6 +15,10 @@ div#page-container
 div#page-container #header
 {
     height:auto;
+    z-index:9999;
+    position:relative;
+    display:block;
+    width:100%;
 }
 div#page-container #header .lang
 {
@@ -35,7 +39,7 @@ div#page-container #header #navigator-list ul
 div#page-container #header #navigator-list ul li
 {
     float:left;
-    width:50px;
+    width:5em;
     cursor:pointer;
     margin-left:5px;
     margin-right:5px;
@@ -44,15 +48,22 @@ div#page-container #content-container
 {
     width:100%;
 }
+
+/* DOM渲染自顶向下 ，以下布局 '圣杯布局' 引用自网上
+    
+*/
 /* 第二级导航 */
 div#page-container #subnav
 {
     float:left;
-    width:300px;
+    width:240px;
     height:auto;
-    margin-left:-100%;
 }
 
+div#page-container #subnav div
+{
+    min-height:2em;
+}
 /* 主体内容 */
 div#page-container #main-body
 {

@@ -125,6 +125,8 @@
     <Content Include="Content\a\base.css" />
     <Content Include="Content\a\images\loading.gif" />
     <Content Include="Content\a\images\loading2.jpg" />
+    <Content Include="Content\a\images\mainnav.png" />
+    <Content Include="Content\a\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
     <Content Include="Content\a\layout.css" />
     <Content Include="Content\a\skin.css" />
     <Content Include="Content\jqueryui\flick\images\animated-overlay.gif" />
@@ -227,6 +229,7 @@
     </EmbeddedResource>
     <Content Include="Areas\Main\Views\SysXCode\Details.cshtml" />
     <Content Include="Areas\Main\Views\Index\Index.cshtml" />
+    <Content Include="Areas\Main\Views\SysXCode\List.cshtml" />
     <None Include="Areas\Main\Views\Test\Details.cshtml" />
     <None Include="Areas\Main\Views\Test\Edit.cshtml" />
     <Content Include="packages.config" />
