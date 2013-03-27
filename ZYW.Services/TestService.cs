@@ -154,5 +154,26 @@ using ZYW.Model;
         }
 
         #endregion
+        
+
+        #region IDataBaseService<TestModel> 成员
+
+
+        public IEnumerable<TestModel> Get(int pageSize, int pageNumber, ref int total, Func<IQueryable<TestModel>, IOrderedQueryable<TestModel>> orderBy, Expression<Func<TestModel, bool>> filter = null, string includeProperties = "")
+        {
+            return null;
+        }
+
+        #endregion
+
+        #region IDataBaseService<TestModel> 成员
+
+
+        public IEnumerable<TestModel> PagingGet(int pageSize, int pageNumber, ref int total, Func<IQueryable<TestModel>, IOrderedQueryable<TestModel>> orderBy, Expression<Func<TestModel, bool>> filter = null, string includeProperties = "")
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

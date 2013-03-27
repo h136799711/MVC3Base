@@ -20,7 +20,7 @@ namespace ZYW.WebApp.Areas.Main.Controllers
 
             #endregion
 
-            return View();
+            return RedirectToAction("Index", "SysXCode");
         }
 
     }

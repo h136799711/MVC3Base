@@ -69,7 +69,7 @@ namespace ZYW.Repository
         /// 获取Test的数据集
         /// </summary>
         /// <returns>Test的数据集</returns>
-        public IEnumerable<TestModel> List()
+        public new IEnumerable<TestModel> List()
         {
             return (this.Context as TestDBContext).Tests.ToList();
         }

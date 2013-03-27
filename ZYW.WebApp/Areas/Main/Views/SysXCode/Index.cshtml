@@ -1,84 +1,63 @@
-﻿@model IEnumerable<ZYW.Model.SysXCode>
-@{
-    Layout = "~/Areas/Main/Views/Shared/MainAreaLayout.cshtml";
+﻿@{
+    Layout = null;
 }
-<h2>@ViewBag.Title</h2>
-<p>
-    @Html.ActionLink((string)ViewBag.Create, "Create")
-</p>
-<table>
-    <tr>
-        <th>
-        </th>
-        <th>
-            @ViewBag.XCode
-        </th>
-        <th>
-            @ViewBag.XName
-        </th>
-        <th>
-            @ViewBag.XOrderNumber
-        </th>
-        <th>
-            @ViewBag.XParentID
-        </th>
-        <th>
-            @ViewBag.XDepth
-        </th>
-        <th>
-            @ViewBag.XSource
-        </th>
-        <th>
-            @ViewBag.XFlag
-        </th>
-        <th>
-            @ViewBag.XRemark
-        </th>
-    </tr>
-    @if (Model == null || Model.Count() == 0)
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>@ViewBag.Title</title>@* 引入Jquery的智能感知文件 *@
+    @if (false)
     {
-        
-        <tr class="center">
-            <td class="warning" colspan="8">
-                @ViewBag.NoData
-            </td>
-        </tr>
+        <script src="../../../../Scripts/jquery/1.9.1-vsdoc.js" type="text/javascript"></script>
     }
-    else
-    {
-        foreach (var item in Model)
-        {
-        <tr>
-            <td>
-                @Html.ActionLink((string)ViewBag.Edit, "Edit", new { ID = item.XID }) |
-                @Html.ActionLink((string)ViewBag.Details, "Details", new { ID = item.XID }) |
-                @Html.ActionLink((string)ViewBag.Delete, "Delete", new { ID = item.XID })
-            </td>
-            <td>
-                @item.XCode
-            </td>
-            <td>
-                @item.XName
-            </td>
-            <td>
-                @item.XOrderNumber
-            </td>
-            <td>
-                @item.XParentID
-            </td>
-            <td>
-                @item.XDepth
-            </td>
-            <td>
-                @item.XSource
-            </td>
-            <td>
-                @item.XFlag
-            </td>
-            <td>
-                @item.XRemark
-            </td>
-        </tr>
-        }
-    }
-</table>
+@* 引入easyui的CSS文件 *@
+    <link href="@Url.Content("~/Content/easyui/default/easyui.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/easyui/icon.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/ui-a/layout.css")" rel="stylesheet" type="text/css" />
+    @* 引入easyui和Jquery的JS文件 *@
+    <script src="@Url.Content("~/Scripts/jquery/1.9.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery/easyui/1.3.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery/easyui/locale/easyui-lang-zh_CN.js")"></script>
+    <script src="@Url.Content("~/Scripts/sysxcode.js")" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        //当点击第二级导航链接时，载入json数据，使用字典来查找相应js代码来解析此json
+        //通常用$mvc3.模块名.控制器.方法
+        $(function () {
+            //当第二级导航载入完成时调用
+            $("#center_container").html("<table id='dg_sysxcodes' ></table>");
+            $mvc3.main.sysxcode.list("dg_sysxcodes");
+        });
+    </script>
+
+</head>
+<body class="easyui-layout">
+    @* 上北 *@
+    <div data-options="region:'north',title:'North Title'"
+        style="height: 100px;">
+    </div>
+    @* 左西 *@
+    <div data-options="region:'west',split:true" style="width: 200px;">
+        <div id="subnav" class="easyui-accordion" data-options="fit:true">
+            <div title="About Accordion" iconcls="icon-ok" selected="true">
+                <h3 style="color: #0099FF;">
+                    Accordion for jQuery</h3>
+                <p>
+                    Accordion is a part of easyui framework for jQuery. It lets you define your accordion
+                    component on web page more easily.</p>
+            </div>
+            <div title="About easyui" iconcls="icon-reload">
+                easyui help you build your web page easily
+            </div>
+        </div>
+    </div>
+   
+    @* 右东 *@
+    <div data-options="region:'east',iconCls:'icon-reload',title:'East',split:true" style="width: 100px;">
+    </div>
+    @* 下南 *@
+    <div data-options="region:'south',title:'South Title',split:true" style="height: 100px;">
+    </div> @* 中 *@
+    <div id="center_container" data-options="region:'center',title:'center title'" style="padding: 5px; background: #eee;">
+    </div>
+</body>
+</html>

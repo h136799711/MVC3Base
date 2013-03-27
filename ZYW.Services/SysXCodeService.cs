@@ -21,6 +21,8 @@ namespace ZYW.Services
     using System.Text;
     using ZYW.IServices;
     using ZYW.IRepositorys;
+    using System.Linq.Expressions;
+    using ZYW.Model;
 
     #endregion
 
@@ -119,6 +121,34 @@ namespace ZYW.Services
         public IEnumerable<Model.SysXCode> Get(System.Linq.Expressions.Expression<Func<Model.SysXCode, bool>> filter = null, Func<IQueryable<Model.SysXCode>, IOrderedQueryable<Model.SysXCode>> orderBy = null, string includeProperties = "")
         {
             return this._sysXCodeRepository.Get(filter, orderBy, includeProperties);
+        }     
+
+        /// <summary>
+        /// Gets the single.
+        /// </summary>
+        /// <param name="filter">The filter.</param>
+        /// <param name="orderBy">The order by.</param>
+        /// <param name="includeProperties">The include properties.</param>
+        /// <returns>Model.SysXCode.</returns>
+        public Model.SysXCode GetSingle(System.Linq.Expressions.Expression<Func<Model.SysXCode, bool>> filter = null, Func<IQueryable<Model.SysXCode>, IOrderedQueryable<Model.SysXCode>> orderBy = null, string includeProperties = "")
+        {
+            return this._sysXCodeRepository.GetSingle(filter, orderBy, includeProperties);
+        }
+
+        /// <summary>
+        /// Gets the specified page size.
+        /// </summary>
+        /// <param name="pageSize">Size of the page.</param>
+        /// <param name="pageNumber">The page number.</param>
+        /// <param name="total">The total.</param>
+        /// <param name="filter">The filter.</param>
+        /// <param name="orderBy">The order by.</param>
+        /// <param name="includeProperties">The include properties.</param>
+        /// <returns>IEnumerable{SysXCode}.</returns>
+        public IEnumerable<SysXCode> Get(int pageSize, int pageNumber, ref int total, Func<IQueryable<SysXCode>, IOrderedQueryable<SysXCode>> orderBy, Expression<Func<SysXCode, bool>> filter = null, string includeProperties = "")
+        {
+            return this._sysXCodeRepository.Get(pageSize, pageNumber, ref total,
+                orderBy,filter,includeProperties);
         }
 
         #endregion
@@ -166,22 +196,6 @@ namespace ZYW.Services
         public System.Collections.IEnumerable SubNavOf(long ID)
         {
             return this._sysXCodeRepository.SubNavOf(ID);
-        }
-
-        #endregion
-
-        #region IDataBaseService<SysXCode> 成员
-
-        /// <summary>
-        /// Gets the single.
-        /// </summary>
-        /// <param name="filter">The filter.</param>
-        /// <param name="orderBy">The order by.</param>
-        /// <param name="includeProperties">The include properties.</param>
-        /// <returns>Model.SysXCode.</returns>
-        public Model.SysXCode GetSingle(System.Linq.Expressions.Expression<Func<Model.SysXCode, bool>> filter = null, Func<IQueryable<Model.SysXCode>, IOrderedQueryable<Model.SysXCode>> orderBy = null, string includeProperties = "")
-        {
-            return this._sysXCodeRepository.GetSingle(filter, orderBy, includeProperties);
         }
 
         #endregion

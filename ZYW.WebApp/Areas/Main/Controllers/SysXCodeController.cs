@@ -25,6 +25,7 @@ namespace ZYW.WebApp.Areas.Main.Controllers
     using System.Collections;
     using System;
     using ZYW.WebApp.ViewModel;
+    using ZYW.WebApp.Common.Const;
 
     #endregion
 
@@ -63,45 +64,20 @@ namespace ZYW.WebApp.Areas.Main.Controllers
         {
             #region ViewBag
 
+            ViewBag.Title = ViewBagMessage.List;
+            ViewBag.XID = ModelDisplayName.ID;
+            ViewBag.Name = ModelDisplayName.Name;
             ViewBag.XCode = ModelDisplayName.XCode;
-            ViewBag.XName = ModelDisplayName.Name;
+            ViewBag.XDepth = ModelDisplayName.XDepth;
+            ViewBag.XFlag = ModelDisplayName.XFlag;
             ViewBag.XOrderNumber = ModelDisplayName.XOrderNumber;
             ViewBag.XParentID = ModelDisplayName.XParentID;
-            ViewBag.XDepth = ModelDisplayName.XDepth;
+            ViewBag.Remark = ModelDisplayName.Remark;
             ViewBag.XSource = ModelDisplayName.XSource;
-            ViewBag.XFlag = ModelDisplayName.XFlag;
-            ViewBag.XRemark = ModelDisplayName.Remark;
-
-            ViewBag.Create = ViewBagMessage.Create;
-            ViewBag.BackToList = ViewBagMessage.BackToList;
-            ViewBag.NoData = ViewBagMessage.NoData;
-            ViewBag.Edit = ViewBagMessage.Edit;
-            ViewBag.Delete = ViewBagMessage.Delete;
-            ViewBag.Details = ViewBagMessage.Details;
-
-            ViewBag.Title = ViewBagMessage.List;
-            ViewBag.SysXCode = ViewBagMessage.SysXCode;
 
             #endregion
-            
-            if (Request.IsAjaxRequest())
-            {
-                IEnumerable list = from sysxcode in this._sysXCodeService.List()
-                                   select new
-                                   {
-                                       sysxcode.XCode,
-                                       sysxcode.XDepth,
-                                       sysxcode.XFlag,
-                                       sysxcode.XID,
-                                       sysxcode.XName,
-                                       sysxcode.XOrderNumber,
-                                       sysxcode.XParentID,
-                                       sysxcode.XRemark,
-                                       sysxcode.XSource
-                                   };
-                return Json(list, JsonRequestBehavior.AllowGet);
-            }
-            return View(this._sysXCodeService.List());
+
+            return View();
         }
 
         /// <summary>
@@ -111,36 +87,54 @@ namespace ZYW.WebApp.Areas.Main.Controllers
         /// <returns>ActionResult.</returns>
         public ActionResult List()
         {
-            #region ViewBag
-
-            ViewBag.XCode = ModelDisplayName.XCode;
-            ViewBag.XName = ModelDisplayName.Name;
-            ViewBag.XOrderNumber = ModelDisplayName.XOrderNumber;
-            ViewBag.XParentID = ModelDisplayName.XParentID;
-            ViewBag.XDepth = ModelDisplayName.XDepth;
-            ViewBag.XSource = ModelDisplayName.XSource;
-            ViewBag.XFlag = ModelDisplayName.XFlag;
-            ViewBag.XRemark = ModelDisplayName.Remark;
-
-            ViewBag.Create = ViewBagMessage.Create;
-            ViewBag.BackToList = ViewBagMessage.BackToList;
-            ViewBag.NoData = ViewBagMessage.NoData;
-            ViewBag.Edit = ViewBagMessage.Edit;
-            ViewBag.Delete = ViewBagMessage.Delete;
-            ViewBag.Details = ViewBagMessage.Details;
-
-            ViewBag.Title = ViewBagMessage.List;
-            ViewBag.SysXCode = ViewBagMessage.SysXCode;
-
-            #endregion
-
             if (Request.IsAjaxRequest())
             {
-                return PartialView(this._sysXCodeService.List());
+                var result = from code in this._sysXCodeService.List()
+                             select new
+                             {
+                                 code.XCode,
+                                 code.XDepth,
+                                 code.XFlag,
+                                 code.XID,
+                                 code.XName,
+                                 code.XOrderNumber,
+                                 code.XParentID,
+                                 code.XRemark,
+                                 code.XSource
+                             };
+                return Json(new { total = result.Count(), rows = result }, JsonRequestBehavior.AllowGet);
             }
-            return View(this._sysXCodeService.List());
+            return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// Pagings the list.
+        /// </summary>
+        /// <param name="pageSize">Size of the page.</param>
+        /// <param name="pageNumber">The page number.</param>
+        /// <returns>ActionResult.</returns>
+        public ActionResult PagingList(int pageSize,int pageNumber)
+        {
+            if (Request.IsAjaxRequest())
+            {
+                int total = 0;
+                var result = from code in this._sysXCodeService.Get(pageSize, pageNumber, ref total, s => s.OrderBy(code => code.XID))
+                             select new
+                             {
+                                 code.XCode,
+                                 code.XDepth,
+                                 code.XFlag,
+                                 code.XID,
+                                 code.XName,
+                                 code.XOrderNumber,
+                                 code.XParentID,
+                                 code.XRemark,
+                                 code.XSource
+                             };
+                return Json(new { total = total, rows = result }, JsonRequestBehavior.AllowGet);
+            }
+            return RedirectToAction("Index");
+        }
         /// <summary>
         /// Detailses the specified ID.
         /// GET: /Main/SysXCode/Details/5 .
@@ -149,17 +143,7 @@ namespace ZYW.WebApp.Areas.Main.Controllers
         /// <returns>ActionResult.</returns>
         public ActionResult Details(long ID)
         {
-            #region ViewBag
-
-            ViewBag.Title = Resources.ViewBagMessage.Details;
-            ViewBag.Create = Resources.ViewBagMessage.Create;
-            ViewBag.Edit = Resources.ViewBagMessage.Edit;
-            ViewBag.BackToList = Resources.ViewBagMessage.BackToList;
-            ViewBag.SysXCode = ViewBagMessage.SysXCode;
-
-            #endregion
-
-            return View(this._sysXCodeService.GetByID(ID));
+            return RedirectToAction("Index");
         }
 
         /// <summary>
@@ -169,16 +153,7 @@ namespace ZYW.WebApp.Areas.Main.Controllers
         /// <returns>ActionResult.</returns>
         public ActionResult Create()
         {
-            #region ViewBag
-
-            ViewBag.Title = Resources.ViewBagMessage.Create;
-            ViewBag.Create = Resources.ViewBagMessage.Create;
-            ViewBag.BackToList = Resources.ViewBagMessage.BackToList;
-            ViewBag.SysXCode = ViewBagMessage.SysXCode;
-
-            #endregion
-
-            return View();
+            return RedirectToAction("Index");
         }
 
         /// <summary>
@@ -190,14 +165,7 @@ namespace ZYW.WebApp.Areas.Main.Controllers
         [HttpPost]
         public ActionResult Create(SysXCode sysXCode)
         {
-            if (ModelState.IsValid)
-            {
-                this._sysXCodeService.Insert(sysXCode);
-                this._sysXCodeService.Save();
-                return RedirectToAction("Index");
-            }
-
-            return View();
+            return RedirectToAction("Index");
         }
 
         /// <summary>
@@ -208,35 +176,18 @@ namespace ZYW.WebApp.Areas.Main.Controllers
         /// <returns>ActionResult.</returns>
         public ActionResult Edit(long ID)
         {
-            #region ViewBag
-
-            ViewBag.Save = Resources.ViewBagMessage.Save;
-            ViewBag.Title = Resources.ViewBagMessage.Edit;
-            ViewBag.BackToList = Resources.ViewBagMessage.BackToList;
-            ViewBag.SysXCode = ViewBagMessage.SysXCode;
-
-            #endregion
-
-            return View(this._sysXCodeService.GetByID(ID));
+            return RedirectToAction("Index");
         }
 
         /// <summary>
         /// Edits the specified id.
         /// POST: /Main/SysXCode/Edit/5.
         /// </summary>
-        /// <param name="id">The id.</param>
-        /// <param name="collection">The collection.</param>
         /// <returns>ActionResult.</returns>
         [HttpPost]
         public ActionResult Edit(SysXCode sysXCode)
         {
-            if (ModelState.IsValid)
-            {
-                this._sysXCodeService.Update(sysXCode);
-                this._sysXCodeService.Save();
-                return RedirectToAction("Index");
-            }
-            return View(sysXCode);
+            return RedirectToAction("Index");
         }
 
         /// <summary>
@@ -247,16 +198,7 @@ namespace ZYW.WebApp.Areas.Main.Controllers
         /// <returns>ActionResult.</returns>
         public ActionResult Delete(long ID)
         {
-            #region ViewBag
-
-            ViewBag.Title = ViewBagMessage.Delete;
-            ViewBag.Delete = ViewBagMessage.Delete;
-            ViewBag.BackToList = ViewBagMessage.BackToList;
-            ViewBag.SysXCode = ViewBagMessage.SysXCode;
-
-            #endregion
-
-            return View(this._sysXCodeService.GetByID(ID));
+            return RedirectToAction("Index");
         }
 
         /// <summary>
@@ -266,12 +208,8 @@ namespace ZYW.WebApp.Areas.Main.Controllers
         /// <param name="sysXCode">The SysXCode.</param>
         /// <returns>ActionResult.</returns>
         [HttpPost]
-        public ActionResult Delete(long ID,SysXCode sysXCode)
+        public ActionResult Delete(long ID, SysXCode sysXCode)
         {
-            sysXCode = this._sysXCodeService.GetByID(ID);
-            this._sysXCodeService.Delete(sysXCode);
-            this._sysXCodeService.Save();
-
             return RedirectToAction("Index");
         }
 
@@ -292,19 +230,23 @@ namespace ZYW.WebApp.Areas.Main.Controllers
         /// 返回子导航
         /// </summary>
         /// <returns>ActionResult.</returns>
-        public ActionResult SubNavOf(long ID)
+        public ActionResult SubNavOf(long? ID)
         {
             if (!String.IsNullOrEmpty(Request.Form["ID"]))
             {
                 ID = long.Parse(Request.Form["ID"]);
             }
+            if (!ID.HasValue)
+            {
+                ID = long.MinValue;
+            }
+
             if (Request.IsAjaxRequest())
             {
-                return Json(this._sysXCodeService.SubNavOf(ID), JsonRequestBehavior.AllowGet);
+                return Json(this._sysXCodeService.SubNavOf(ID.Value), JsonRequestBehavior.AllowGet);
             }
             return RedirectToAction("Index");
         }
-
 
         #endregion
     }

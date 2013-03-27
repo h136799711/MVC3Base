@@ -38,14 +38,14 @@ using System;
 
         #endregion
 
-        #region 服务接口声明
+        #region 服务声明
         
         /// <summary>
         /// Lists this instance.
         /// </summary>
         /// <returns>IEnumerable{`0}.</returns>
         IEnumerable<TEntity> List();
-
+        
         /// <summary>
         /// Inserts the specified entity.
         /// </summary>
@@ -74,6 +74,24 @@ using System;
         IEnumerable<TEntity> Get(
             Expression<Func<TEntity, bool>> filter = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+            string includeProperties = "");
+
+        /// <summary>
+        /// Gets the specified page size.
+        /// </summary>
+        /// <param name="pageSize">Size of the page.</param>
+        /// <param name="pageNumber">The page number.</param>
+        /// <param name="total">The total.</param>
+        /// <param name="orderBy">The order by.</param>
+        /// <param name="filter">The filter.</param>
+        /// <param name="includeProperties">The include properties.</param>
+        /// <returns>IEnumerable{`0}.</returns>
+        IEnumerable<TEntity> Get(
+            int pageSize, 
+            int pageNumber, 
+            ref int total,         
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy, 
+            Expression<Func<TEntity, bool>> filter = null, 
             string includeProperties = "");
 
         /// <summary>

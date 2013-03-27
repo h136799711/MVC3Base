@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppHandleErrorAttribute.cs" />
+    <Compile Include="Const\AjaxResult.cs" />
     <Compile Include="Const\LangEnum.cs" />
     <Compile Include="Const\SessionKey.cs" />
     <Compile Include="LanguageSnifferAttribute.cs" />

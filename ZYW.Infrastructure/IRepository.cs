@@ -64,6 +64,18 @@ using System.Linq;
             string includeProperties = "");
 
         /// <summary>
+        /// Gets the specified filter.
+        /// </summary>
+        /// <param name="pageSize">Size of the page.</param>
+        /// <param name="pageNumber">The page number.</param>
+        /// <param name="total">The total.</param>
+        /// <param name="filter">The filter.</param>
+        /// <param name="orderBy">The order by.</param>
+        /// <param name="includeProperties">The include properties.</param>
+        /// <returns>IEnumerable{`0}.</returns>
+        IEnumerable<TEntity> Get(int pageSize, int pageNumber, ref int total, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy, Expression<Func<TEntity, bool>> filter = null, string includeProperties = "");
+
+        /// <summary>
         /// Singles the specified filter.
         /// </summary>
         /// <param name="filter">The filter.</param>

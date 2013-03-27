@@ -183,7 +183,7 @@ namespace ZYW.Repository
         /// <param name="orderBy">The order by.</param>
         /// <param name="includeProperties">The include properties.</param>
         /// <returns>`0.</returns>
-        public TEntity GetSingle(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeProperties = "")
+        public virtual TEntity GetSingle(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeProperties = "")
         {
             IQueryable<TEntity> query = dbSet;
 
@@ -216,6 +216,38 @@ namespace ZYW.Repository
 
             return entity;
 
+        }
+
+        /// <summary>
+        /// Gets the specified page size.
+        /// </summary>
+        /// <param name="pageSize">Size of the page.</param>
+        /// <param name="pageNumber">The page number.</param>
+        /// <param name="total">The total.</param>
+        /// <param name="filter">The filter.</param>
+        /// <param name="orderBy">The order by.</param>
+        /// <param name="includeProperties">The include properties.</param>
+        /// <returns>IEnumerable{`0}.</returns>
+        public virtual IEnumerable<TEntity> Get(int pageSize, int pageNumber, ref int total, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy, Expression<Func<TEntity, bool>> filter = null, string includeProperties = "")
+        {
+            IQueryable<TEntity> query = dbSet;
+            pageSize = pageSize < 0 ? 1 : pageSize;
+            pageNumber = pageNumber < 1 ? 1 : pageNumber; 
+            int skipCnt = (pageNumber - 1) * pageSize;
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+
+            foreach (var includeProperty in includeProperties.Split
+                (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
+
+            total = (int)query.LongCount();
+            return orderBy(query).Skip(skipCnt).Take(pageSize).ToList();
+            
         }
 
         #endregion

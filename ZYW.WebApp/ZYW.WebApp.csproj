@@ -129,6 +129,73 @@
     <Content Include="Content\a\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
     <Content Include="Content\a\layout.css" />
     <Content Include="Content\a\skin.css" />
+    <Content Include="Content\easyui\default\accordion.css" />
+    <Content Include="Content\easyui\default\calendar.css" />
+    <Content Include="Content\easyui\default\combo.css" />
+    <Content Include="Content\easyui\default\combobox.css" />
+    <Content Include="Content\easyui\default\datagrid.css" />
+    <Content Include="Content\easyui\default\datebox.css" />
+    <Content Include="Content\easyui\default\dialog.css" />
+    <Content Include="Content\easyui\default\easyui.css" />
+    <Content Include="Content\easyui\default\images\accordion_arrows.png" />
+    <Content Include="Content\easyui\default\images\blank.gif" />
+    <Content Include="Content\easyui\default\images\calendar_arrows.png" />
+    <Content Include="Content\easyui\default\images\combo_arrow.png" />
+    <Content Include="Content\easyui\default\images\datagrid_icons.png" />
+    <Content Include="Content\easyui\default\images\datebox_arrow.png" />
+    <Content Include="Content\easyui\default\images\layout_arrows.png" />
+    <Content Include="Content\easyui\default\images\linkbutton_bg.png" />
+    <Content Include="Content\easyui\default\images\loading.gif" />
+    <Content Include="Content\easyui\default\images\menu_arrows.png" />
+    <Content Include="Content\easyui\default\images\messager_icons.png" />
+    <Content Include="Content\easyui\default\images\pagination_icons.png" />
+    <Content Include="Content\easyui\default\images\panel_tools.png" />
+    <Content Include="Content\easyui\default\images\searchbox_button.png" />
+    <Content Include="Content\easyui\default\images\slider_handle.png" />
+    <Content Include="Content\easyui\default\images\spinner_arrows.png" />
+    <Content Include="Content\easyui\default\images\tabs_icons.png" />
+    <Content Include="Content\easyui\default\images\tree_icons.png" />
+    <Content Include="Content\easyui\default\images\validatebox_arrows.png" />
+    <Content Include="Content\easyui\default\images\validatebox_warning.png" />
+    <Content Include="Content\easyui\default\layout.css" />
+    <Content Include="Content\easyui\default\linkbutton.css" />
+    <Content Include="Content\easyui\default\menu.css" />
+    <Content Include="Content\easyui\default\menubutton.css" />
+    <Content Include="Content\easyui\default\messager.css" />
+    <Content Include="Content\easyui\default\pagination.css" />
+    <Content Include="Content\easyui\default\panel.css" />
+    <Content Include="Content\easyui\default\progressbar.css" />
+    <Content Include="Content\easyui\default\propertygrid.css" />
+    <Content Include="Content\easyui\default\searchbox.css" />
+    <Content Include="Content\easyui\default\slider.css" />
+    <Content Include="Content\easyui\default\spinner.css" />
+    <Content Include="Content\easyui\default\splitbutton.css" />
+    <Content Include="Content\easyui\default\tabs.css" />
+    <Content Include="Content\easyui\default\tree.css" />
+    <Content Include="Content\easyui\default\validatebox.css" />
+    <Content Include="Content\easyui\default\window.css" />
+    <Content Include="Content\easyui\icon.css" />
+    <Content Include="Content\easyui\icons\back.png" />
+    <Content Include="Content\easyui\icons\blank.gif" />
+    <Content Include="Content\easyui\icons\cancel.png" />
+    <Content Include="Content\easyui\icons\cut.png" />
+    <Content Include="Content\easyui\icons\edit_add.png" />
+    <Content Include="Content\easyui\icons\edit_remove.png" />
+    <Content Include="Content\easyui\icons\filesave.png" />
+    <Content Include="Content\easyui\icons\help.png" />
+    <Content Include="Content\easyui\icons\mini_add.png" />
+    <Content Include="Content\easyui\icons\mini_edit.png" />
+    <Content Include="Content\easyui\icons\mini_refresh.png" />
+    <Content Include="Content\easyui\icons\no.png" />
+    <Content Include="Content\easyui\icons\ok.png" />
+    <Content Include="Content\easyui\icons\pencil.png" />
+    <Content Include="Content\easyui\icons\print.png" />
+    <Content Include="Content\easyui\icons\redo.png" />
+    <Content Include="Content\easyui\icons\reload.png" />
+    <Content Include="Content\easyui\icons\search.png" />
+    <Content Include="Content\easyui\icons\sum.png" />
+    <Content Include="Content\easyui\icons\tip.png" />
+    <Content Include="Content\easyui\icons\undo.png" />
     <Content Include="Content\jqueryui\flick\images\animated-overlay.gif" />
     <Content Include="Content\jqueryui\flick\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\jqueryui\flick\images\ui-bg_flat_0_eeeeee_40x100.png" />
@@ -146,6 +213,7 @@
     <Content Include="Content\jqueryui\flick\jquery-ui-1.10.2.custom.css" />
     <Content Include="Content\jqueryui\flick\1.10.2.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\ui-a\layout.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\jquery-ui.css" />
@@ -172,6 +240,7 @@
     <Content Include="Scripts\jquery\ui\1.10.2.js" />
     <Content Include="Scripts\jquery\ui\1.10.2.min.js" />
     <Content Include="Scripts\myJqExt.js" />
+    <Content Include="Scripts\sysxcode.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -218,21 +287,17 @@
     <Content Include="log4net.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Areas\Main\Views\Shared\MainAreaLayout.cshtml" />
-    <Content Include="Areas\Main\Views\SysXCode\Create.cshtml" />
     <Content Include="Areas\Main\Views\SysXCode\Index.cshtml" />
-    <Content Include="Areas\Main\Views\SysXCode\Edit.cshtml" />
-    <Content Include="Areas\Main\Views\SysXCode\Delete.cshtml" />
     <EmbeddedResource Include="App_GlobalResources\ViewBagMessage.zh-cn.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>ViewBagMessage.zh-cn1.designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Content Include="Areas\Main\Views\SysXCode\Details.cshtml" />
     <Content Include="Areas\Main\Views\Index\Index.cshtml" />
-    <Content Include="Areas\Main\Views\SysXCode\List.cshtml" />
+    <Content Include="Areas\Main\Views\Shared\MainAreaLayout.cshtml" />
     <None Include="Areas\Main\Views\Test\Details.cshtml" />
     <None Include="Areas\Main\Views\Test\Edit.cshtml" />
     <Content Include="packages.config" />
+    <None Include="Content\easyui\default\images\Thumbs.db" />
     <None Include="Views\AjaxHtml\Index.cshtml" />
     <None Include="Views\Error\Unknown.cshtml" />
     <Content Include="Views\Error\_400.cshtml" />

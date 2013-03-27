@@ -1,0 +1,256 @@
+记录时间：2013-03-25 15:02:42,015 线程ID:[13] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZYW.Repository.TestRepository.List() 位置 D:\github\MVC3Base\ZYW.Repository\TestRepository.cs:行号 74
+   在 ZYW.Services.TestService.List() 位置 D:\github\MVC3Base\ZYW.Services\TestService.cs:行号 94
+   在 ZYW.WebApp.Areas.Main.Controllers.TestController.Index() 位置 D:\github\MVC3Base\ZYW.WebApp\Areas\Main\Controllers\TestController.cs:行号 61
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+记录时间：2013-03-25 15:02:50,343 线程ID:[8] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.ArgumentException: 值不能为 null 或为空。
+参数名: linkText
+   在 System.Web.Mvc.Html.LinkExtensions.ActionLink(HtmlHelper htmlHelper, String linkText, String actionName, String controllerName, RouteValueDictionary routeValues, IDictionary`2 htmlAttributes)
+   在 System.Web.Mvc.Html.LinkExtensions.ActionLink(HtmlHelper htmlHelper, String linkText, String actionName)
+   在 ASP._Page_Areas_Main_Views_SysXCode_Edit_cshtml.Execute() 位置 d:\github\MVC3Base\ZYW.WebApp\Areas\Main\Views\SysXCode\Edit.cshtml:行号 90
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<>c__DisplayClass1e.<InvokeActionResultWithFilters>b__1b()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+记录时间：2013-03-25 15:03:02,515 线程ID:[12] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.ArgumentException: 值不能为 null 或为空。
+参数名: linkText
+   在 System.Web.Mvc.Html.LinkExtensions.ActionLink(HtmlHelper htmlHelper, String linkText, String actionName, String controllerName, RouteValueDictionary routeValues, IDictionary`2 htmlAttributes)
+   在 System.Web.Mvc.Html.LinkExtensions.ActionLink(HtmlHelper htmlHelper, String linkText, String actionName)
+   在 ASP._Page_Areas_Main_Views_SysXCode_Edit_cshtml.Execute() 位置 d:\github\MVC3Base\ZYW.WebApp\Areas\Main\Views\SysXCode\Edit.cshtml:行号 90
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<>c__DisplayClass1e.<InvokeActionResultWithFilters>b__1b()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+记录时间：2013-03-25 15:04:41,515 线程ID:[9] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.ArgumentException: 值不能为 null 或为空。
+参数名: linkText
+   在 System.Web.Mvc.Html.LinkExtensions.ActionLink(HtmlHelper htmlHelper, String linkText, String actionName, String controllerName, RouteValueDictionary routeValues, IDictionary`2 htmlAttributes)
+   在 System.Web.Mvc.Html.LinkExtensions.ActionLink(HtmlHelper htmlHelper, String linkText, String actionName)
+   在 ASP._Page_Areas_Main_Views_SysXCode_Edit_cshtml.Execute() 位置 d:\github\MVC3Base\ZYW.WebApp\Areas\Main\Views\SysXCode\Edit.cshtml:行号 90
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<>c__DisplayClass1e.<InvokeActionResultWithFilters>b__1b()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+记录时间：2013-03-25 15:08:50,890 线程ID:[9] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.ArgumentException: 值不能为 null 或为空。
+参数名: linkText
+   在 System.Web.Mvc.Html.LinkExtensions.ActionLink(HtmlHelper htmlHelper, String linkText, String actionName, String controllerName, RouteValueDictionary routeValues, IDictionary`2 htmlAttributes)
+   在 System.Web.Mvc.Html.LinkExtensions.ActionLink(HtmlHelper htmlHelper, String linkText, String actionName)
+   在 ASP._Page_Areas_Main_Views_SysXCode_Edit_cshtml.Execute() 位置 d:\github\MVC3Base\ZYW.WebApp\Areas\Main\Views\SysXCode\Edit.cshtml:行号 90
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<>c__DisplayClass1e.<InvokeActionResultWithFilters>b__1b()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+记录时间：2013-03-25 15:13:53,046 线程ID:[9] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZYW.Repository.TestRepository.List() 位置 D:\github\MVC3Base\ZYW.Repository\TestRepository.cs:行号 74
+   在 ZYW.Services.TestService.List() 位置 D:\github\MVC3Base\ZYW.Services\TestService.cs:行号 94
+   在 ZYW.WebApp.Areas.Main.Controllers.TestController.Index() 位置 D:\github\MVC3Base\ZYW.WebApp\Areas\Main\Controllers\TestController.cs:行号 61
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+记录时间：2013-03-25 15:54:29,296 线程ID:[13] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZYW.Repository.TestRepository.List() 位置 D:\github\MVC3Base\ZYW.Repository\TestRepository.cs:行号 74
+   在 ZYW.Services.TestService.List() 位置 D:\github\MVC3Base\ZYW.Services\TestService.cs:行号 94
+   在 ZYW.WebApp.Areas.Main.Controllers.TestController.Index() 位置 D:\github\MVC3Base\ZYW.WebApp\Areas\Main\Controllers\TestController.cs:行号 61
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+记录时间：2013-03-25 16:09:51,500 线程ID:[26] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.ArgumentException: 值不能为 null 或为空。
+参数名: linkText
+   在 System.Web.Mvc.Html.LinkExtensions.ActionLink(HtmlHelper htmlHelper, String linkText, String actionName, String controllerName, RouteValueDictionary routeValues, IDictionary`2 htmlAttributes)
+   在 System.Web.Mvc.Html.LinkExtensions.ActionLink(HtmlHelper htmlHelper, String linkText, String actionName)
+   在 ASP._Page_Areas_Main_Views_SysXCode_Create_cshtml.Execute() 位置 d:\github\MVC3Base\ZYW.WebApp\Areas\Main\Views\SysXCode\Create.cshtml:行号 92
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<>c__DisplayClass1e.<InvokeActionResultWithFilters>b__1b()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+记录时间：2013-03-25 16:09:55,546 线程ID:[20] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.ArgumentException: 值不能为 null 或为空。
+参数名: linkText
+   在 System.Web.Mvc.Html.LinkExtensions.ActionLink(HtmlHelper htmlHelper, String linkText, String actionName, String controllerName, RouteValueDictionary routeValues, IDictionary`2 htmlAttributes)
+   在 System.Web.Mvc.Html.LinkExtensions.ActionLink(HtmlHelper htmlHelper, String linkText, String actionName)
+   在 ASP._Page_Areas_Main_Views_SysXCode_Create_cshtml.Execute() 位置 d:\github\MVC3Base\ZYW.WebApp\Areas\Main\Views\SysXCode\Create.cshtml:行号 92
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<>c__DisplayClass1e.<InvokeActionResultWithFilters>b__1b()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+记录时间：2013-03-25 16:10:00,015 线程ID:[23] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.ArgumentException: 值不能为 null 或为空。
+参数名: linkText
+   在 System.Web.Mvc.Html.LinkExtensions.ActionLink(HtmlHelper htmlHelper, String linkText, String actionName, String controllerName, RouteValueDictionary routeValues, IDictionary`2 htmlAttributes)
+   在 System.Web.Mvc.Html.LinkExtensions.ActionLink(HtmlHelper htmlHelper, String linkText, String actionName)
+   在 ASP._Page_Areas_Main_Views_SysXCode_Create_cshtml.Execute() 位置 d:\github\MVC3Base\ZYW.WebApp\Areas\Main\Views\SysXCode\Create.cshtml:行号 92
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<>c__DisplayClass1e.<InvokeActionResultWithFilters>b__1b()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+记录时间：2013-03-25 16:11:19,703 线程ID:[26] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.ArgumentException: 值不能为 null 或为空。
+参数名: linkText
+   在 System.Web.Mvc.Html.LinkExtensions.ActionLink(HtmlHelper htmlHelper, String linkText, String actionName, String controllerName, RouteValueDictionary routeValues, IDictionary`2 htmlAttributes)
+   在 System.Web.Mvc.Html.LinkExtensions.ActionLink(HtmlHelper htmlHelper, String linkText, String actionName)
+   在 ASP._Page_Areas_Main_Views_SysXCode_Create_cshtml.Execute() 位置 d:\github\MVC3Base\ZYW.WebApp\Areas\Main\Views\SysXCode\Create.cshtml:行号 89
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<>c__DisplayClass1e.<InvokeActionResultWithFilters>b__1b()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+记录时间：2013-03-25 16:18:03,843 线程ID:[18] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZYW.Repository.TestRepository.List() 位置 D:\github\MVC3Base\ZYW.Repository\TestRepository.cs:行号 74
+   在 ZYW.Services.TestService.List() 位置 D:\github\MVC3Base\ZYW.Services\TestService.cs:行号 94
+   在 ZYW.WebApp.Areas.Main.Controllers.TestController.Index() 位置 D:\github\MVC3Base\ZYW.WebApp\Areas\Main\Controllers\TestController.cs:行号 61
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+记录时间：2013-03-25 16:28:50,109 线程ID:[22] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZYW.Repository.TestRepository.List() 位置 D:\github\MVC3Base\ZYW.Repository\TestRepository.cs:行号 74
+   在 ZYW.Services.TestService.List() 位置 D:\github\MVC3Base\ZYW.Services\TestService.cs:行号 94
+   在 ZYW.WebApp.Areas.Main.Controllers.TestController.Index() 位置 D:\github\MVC3Base\ZYW.WebApp\Areas\Main\Controllers\TestController.cs:行号 61
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+记录时间：2013-03-25 16:41:36,828 线程ID:[20] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZYW.Repository.TestRepository.List() 位置 D:\github\MVC3Base\ZYW.Repository\TestRepository.cs:行号 74
+   在 ZYW.Services.TestService.List() 位置 D:\github\MVC3Base\ZYW.Services\TestService.cs:行号 94
+   在 ZYW.WebApp.Areas.Main.Controllers.TestController.Index() 位置 D:\github\MVC3Base\ZYW.WebApp\Areas\Main\Controllers\TestController.cs:行号 61
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+记录时间：2013-03-25 16:45:28,125 线程ID:[20] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZYW.Repository.TestRepository.List() 位置 D:\github\MVC3Base\ZYW.Repository\TestRepository.cs:行号 74
+   在 ZYW.Services.TestService.List() 位置 D:\github\MVC3Base\ZYW.Services\TestService.cs:行号 94
+   在 ZYW.WebApp.Areas.Main.Controllers.TestController.Index() 位置 D:\github\MVC3Base\ZYW.WebApp\Areas\Main\Controllers\TestController.cs:行号 61
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+记录时间：2013-03-25 17:02:04,140 线程ID:[22] 日志级别：ERROR 记录类：ZYW.WebApp.Common.AppHandleErrorAttribute property:[(null)] - 错误描述：系统异常
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ZYW.Repository.TestRepository.List() 位置 D:\github\MVC3Base\ZYW.Repository\TestRepository.cs:行号 74
+   在 ZYW.Services.TestService.List() 位置 D:\github\MVC3Base\ZYW.Services\TestService.cs:行号 94
+   在 ZYW.WebApp.Areas.Main.Controllers.TestController.Index() 位置 D:\github\MVC3Base\ZYW.WebApp\Areas\Main\Controllers\TestController.cs:行号 61
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
